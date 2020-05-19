@@ -1,6 +1,7 @@
-<title>COP4331 Project</title>
 <html>
 <head>
+<title>Corona Contacts</title>                                                 
+<link rel="icon" href="https://image.flaticon.com/icons/svg/2913/2913584.svg"> 
 <style>
 div.container1 {
 	font-family:verdana;
@@ -28,8 +29,8 @@ body {
 </head>
 
 <body>
-<div class="container1">COP4331 Summer</div>
+<div class="container1">Corona Contacts Coming Summer 2020</div>
 <div class="container2"><img src="https://media3.giphy.com/media/KziKCpvrGngHbYjaUF/giphy.gif?cid=ecf05e4705830889511b4c5ecb73a042bfb17b4a995e8cd6&rid=giphy.gif"
 alt="Baby Yoda">
-</body>
 </div>
+</body>
