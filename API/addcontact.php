@@ -1,31 +1,32 @@
 <?php
-	$inData = getRequestInfo();
+	$inData = getRequestInfo(); // Store contents from JSON file into variable.
 	
+	// Parse and store individuals fields from JSON field into variables.
 	$first = $inData["first"];
 	$last = $inData["last"];
 	$email = $inData["email"];
 	$phonenumber = $inData["phonenumber"];
 
-	$conn = new mysqli("localhost", "francis", "", "contactmanager");
+	$conn = new mysqli("localhost", "francis", "", "contactmanager"); // Establishes connection to local SQL database.
 
-	if ($conn->connect_error) 
+	if ($conn->connect_error) // If there's a connection error to SQL database, returns error message.
 	{
 		returnWithError( $conn->connect_error );
 	} 
-	else
+	else // If there's no connection error, proceed with inserting values into SQL data table titled "contactlist".
 	{
 		$sql = "insert into contactlist (first,last,email,phonenumber) VALUES ('$first','$last','$email',
 																			   '$phonenumber')";
-		if( $result = $conn->query($sql) != TRUE )
+		if( $result = $conn->query($sql) != TRUE ) // Return error if there's issue with inserting values.
 		{
-			returnWithError( $conn->error );
+			returnWithError( $conn->error ); 
 		}
 		$conn->close();
 	}
 	
-	returnWithError("");
+	returnWithError("Added contact!"); // Reaches this statement if everything worked.
 	
-	function getRequestInfo()
+	function getRequestInfo() // Function to return contents from JSON file.
 	{
 		return json_decode(file_get_contents('php://input'), true);
 	}
@@ -38,7 +39,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"error":"' . $err . '"}';
+		$retValue = '{"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
