@@ -1,4 +1,6 @@
-CREATE database coronacontacts
+CREATE database coronacontacts;
+
+use coronacontacts;
 
 CREATE TABLE Users (
 	`ID` INT NOT NULL AUTO_INCREMENT ,
