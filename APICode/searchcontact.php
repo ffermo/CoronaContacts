@@ -5,15 +5,6 @@
 	$searchResults = "";
 	$searchCount = 0;
 
-	$name = $inData["name"];
-	$email = $inData["email"];
-	$city = $inData["city"];
-	$state = $inData["state"];
-	$zip = $inData["zip"];
-	$phone = $inData["phone"];
-	$infected = $inData["infected"];
-	$userId = $inData["userId"];
-
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
 	if ($conn->connect_error) 
