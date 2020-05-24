@@ -14,7 +14,7 @@
 
 	else
 	{
-		$sql = "select Name from Colors where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+		$sql = "select Name from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
 		
 		$result = $conn->query($sql);
 		
