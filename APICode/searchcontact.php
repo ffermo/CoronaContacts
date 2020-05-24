@@ -41,6 +41,9 @@
 				}
 				
 				$searchCount++;
+
+				echo "Hello World!";
+
 				
 				// $searchResults .= '"'$row["name", "email", "phone"]'"';
 			}
