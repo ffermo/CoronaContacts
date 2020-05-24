@@ -40,7 +40,7 @@
 				
 				$searchCount++;
 				
-				$searchResults .= '"'$row["name"]','$row["email"]','$row["phone"]'"';
+				$searchResults .= '"'$row["name", "email", "phone"]'"';
 			}
 		}
 		
