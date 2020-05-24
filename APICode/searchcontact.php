@@ -2,7 +2,7 @@
 
 	$inData = getRequestInfo();
 	
-	$searchResults = "";
+	// $searchResults = "";
 	$searchCount = 0;
 
 	$name = $inData["name"];
@@ -41,8 +41,6 @@
 				}
 				
 				$searchCount++;
-
-				echo "Hello World!";
 
 				
 				// $searchResults .= '"'$row["name", "email", "phone"]'"';
