@@ -2,7 +2,7 @@
 
 	$inData = getRequestInfo();
 	
-	// $searchResults = "";
+	$searchResults = "";
 	$searchCount = 0;
 
 	$name = $inData["name"];
@@ -25,7 +25,7 @@
 	{
 		// $sql = "SELECT contact_id, first_name, last_name, email, phone_number, user_id FROM list_of_contacts WHERE (first_name LIKE '%$search%' OR last_name LIKE '%$search%' OR email LIKE '%$search%' OR phone_number LIKE '%$search%') AND user_id = $userId ORDER BY $filter"; 
 
-		$sql = "SELECT * FROM Contacts WHERE userId = $userId AND ((name LIKE '%$search%') OR (email LIKE '%$search%') OR (city LIKE '%$search%') OR (state LIKE '%$search%') OR (zip LIKE '%$search%') OR (phone LIKE '%$search%')) ORDER BY $filter";
+		$sql = "SELECT * FROM Contacts WHERE userId = $userId AND email LIKE '%$search%' ORDER BY $filter";
 
 		// $sql = "select * from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
 		
@@ -37,13 +37,13 @@
 			{
 				if( $searchCount > 0 )
 				{
-					// $searchResults .= ",";
+					$searchResults .= ",";
 				}
 				
 				$searchCount++;
 
 				
-				// $searchResults .= '"'$row["name", "email", "phone"]'"';
+				$searchResults .= '"'$row["name", "email", "phone"]'"';
 			}
 		}
 		
