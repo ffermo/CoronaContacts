@@ -25,7 +25,7 @@
 	{
 		// $sql = "SELECT contact_id, first_name, last_name, email, phone_number, user_id FROM list_of_contacts WHERE (first_name LIKE '%$search%' OR last_name LIKE '%$search%' OR email LIKE '%$search%' OR phone_number LIKE '%$search%') AND user_id = $userId ORDER BY $filter"; 
 
-		$sql = "SELECT (name OR email OR city OR state OR zip OR phone) FROM Contacts WHERE ((name LIKE '%$search%') OR (email LIKE '%$search%') OR (city LIKE '%$search%') OR (state LIKE '%$search%') OR (zip LIKE '%$search%') OR (phone LIKE '%$search%'))";
+		$sql = "SELECT (name, email, city, state, zip, phone) FROM Contacts WHERE ((name LIKE '%$search%') OR (email LIKE '%$search%') OR (city LIKE '%$search%') OR (state LIKE '%$search%') OR (zip LIKE '%$search%') OR (phone LIKE '%$search%'))";
 		
 		$result = $conn->query($sql);
 		
