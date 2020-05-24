@@ -1,0 +1,33 @@
+CREATE database coronacontacts;
+
+use coronacontacts;
+
+CREATE TABLE Users (
+	`ID` INT NOT NULL AUTO_INCREMENT ,
+	`DateCreated` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+	`DateLastLoggedIn` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+	`FirstName` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`LastName` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`Email` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`Password` VARCHAR(50) NOT NULL DEFAULT '' ,
+	PRIMARY KEY (`ID`)
+)
+ENGINE = InnoDB;
+
+CREATE TABLE Contacts (
+	`ID` INT NOT NULL AUTO_INCREMENT ,
+	`Name` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`Email` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`City` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`State` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`Zip` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`Phone` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`Infected` VARCHAR(50) NOT NULL DEFAULT '' ,
+	`UserID` INT NOT NULL DEFAULT '0' ,
+	PRIMARY KEY (`ID`)
+)
+ENGINE = InnoDB;
+
+insert into Users (FirstName,LastName,Email,Password) VALUES ('Adam','Minister','admin@coronacontacts.com','COP4331');
+insert into Contacts (Name, Infected, UserID) VALUES ('Root', 'yes', '2');   
+insert into Contacts (Name, Infected, UserID) VALUES ('Root', 'yes', '1'); 
