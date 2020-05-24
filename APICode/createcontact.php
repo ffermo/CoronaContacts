@@ -19,7 +19,7 @@
 
 	else
 	{
-		$sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES (' $name ',' $email ',' $city ',' $state ',' $zip ',' $phone ', ' $infected ', ' $userId ')";
+		$sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
