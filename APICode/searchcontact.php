@@ -12,7 +12,7 @@
 	$zip = $inData["zip"];
 	$phone = $inData["phone"];
 	// $infected = $inData["infected"];
-	$userId = $inData["userId"];
+	// $userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
