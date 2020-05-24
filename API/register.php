@@ -5,9 +5,9 @@
 	$first = $inData["first"];
 	$last = $inData["last"];
 	$email = $inData["email"];
-	$phonenumber = $inData["phonenumber"];
+	$password = $inData["password"];
 
-	$conn = new mysqli("localhost", "francis", "", "contactmanager"); // Establishes connection to local SQL database.
+	$conn = new mysqli("localhost", "ubuntu", "", "coronacontacts"); // Establishes connection to local SQL database.
 
 	if ($conn->connect_error) // If there's a connection error to SQL database, returns error message.
 	{
@@ -15,8 +15,8 @@
 	} 
 	else // If there's no connection error, proceed with inserting values into SQL data table titled "contactlist".
 	{
-		$sql = "insert into contactlist (first,last,email,phonenumber) VALUES ('$first','$last','$email',
-																			   '$phonenumber')";
+		$sql = "insert into Users (FirstName,LastName,Email,Password) VALUES ('$first','$last','$email',
+			'$password')";
 		if( $result = $conn->query($sql) != TRUE ) // Return error if there's issue with inserting values.
 		{
 			returnWithError( $conn->error ); 
@@ -24,7 +24,7 @@
 		$conn->close();
 	}
 	
-	returnWithError("Added contact!"); // Reaches this statement if everything worked.
+	returnWithError("Registered user!"); // Reaches this statement if everything worked.
 	
 	function getRequestInfo() // Function to return contents from JSON file.
 	{
