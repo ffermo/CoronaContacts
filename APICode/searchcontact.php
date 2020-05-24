@@ -11,7 +11,7 @@
 	$state = $inData["state"];
 	$zip = $inData["zip"];
 	$phone = $inData["phone"];
-	// $infected = $inData["infected"];
+	$infected = $inData["infected"];
 	// $userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
@@ -40,7 +40,7 @@
 				
 				$searchCount++;
 				
-				$searchResults .= '"' . $row["name"] . '"';
+				$searchResults .= '"'$row["name"]','$row["email"]','$row["phone"]'"';
 			}
 		}
 		
