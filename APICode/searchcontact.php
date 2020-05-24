@@ -40,7 +40,7 @@
 				
 				$searchCount++;
 				
-				$searchResults .= '"' . $row["Name"] . '"';
+				$searchResults .= '"' . $row["name"] . '"';
 			}
 		}
 		
@@ -67,7 +67,7 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
+		$retValue = '{"BOB DID IT!"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
