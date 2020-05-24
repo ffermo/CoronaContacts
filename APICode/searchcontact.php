@@ -12,7 +12,7 @@
 	$zip = $inData["zip"];
 	$phone = $inData["phone"];
 	$infected = $inData["infected"];
-	// $userId = $inData["userId"];
+	$userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
@@ -27,7 +27,7 @@
 
 		// $sql = "SELECT * FROM Contacts WHERE ((name LIKE '%$search%') AND (email LIKE '%$search%') AND (city LIKE '%$search%') AND (state LIKE '%$search%') AND (zip LIKE '%$search%') AND (phone LIKE '%$search%')) AND user_id = $userId ORDER BY $filter";
 
-		$sql = "select Name from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+		$sql = "select * from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
 		
 		$result = $conn->query($sql);
 		
