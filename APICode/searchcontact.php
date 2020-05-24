@@ -25,7 +25,7 @@
 	{
 		// $sql = "SELECT contact_id, first_name, last_name, email, phone_number, user_id FROM list_of_contacts WHERE (first_name LIKE '%$search%' OR last_name LIKE '%$search%' OR email LIKE '%$search%' OR phone_number LIKE '%$search%') AND user_id = $userId ORDER BY $filter"; 
 
-		$sql = "SELECT * FROM Contacts WHERE userId = $userId AND email LIKE '%$search%' ORDER BY $filter";
+		$sql = "SELECT * FROM Contacts WHERE UserId = $userId AND (name like '%$search%' OR email like '%$search%' OR city like '%$search%' OR state like '%$search%' OR zip like '%$search%' OR phone like '%$search%')";
 
 		// $sql = "select * from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
 		
