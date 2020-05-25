@@ -4,6 +4,7 @@
 
 	// $searchResults = "";
 	// NOTE: Variables (might change later)
+	// Parse and store individuals fields from JSON field into variables.
 	$ID = $inData["ID"];
 	$userId = $inData["userId"];
 

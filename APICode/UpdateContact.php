@@ -1,6 +1,7 @@
 <?php
 	$inData = getRequestInfo();
 	
+	// Parse and store individuals fields from JSON field into variables.
 	$name = $inData["name"];
 	$email = $inData["email"];
 	$city = $inData["city"];
