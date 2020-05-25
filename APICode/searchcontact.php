@@ -30,7 +30,9 @@
 
 		// $sql = "SELECT * FROM Contacts WHERE UserID = ‘$userId’ AND (Name like ‘%$search%’ OR Email like ‘%$search%’ OR City like ‘%$search%’ OR State like ‘%$search%’ OR Zip like ‘%$search%’ OR Phone like ‘%$search%’)";
 
-		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] ORDER BY $filter";
+		// Missing ORDER BY $filter"
+
+		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"];
 
 
 		$result = $conn->query($sql);
