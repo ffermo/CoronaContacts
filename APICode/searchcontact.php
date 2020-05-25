@@ -58,7 +58,7 @@
 				//				  '"' . $row["Email"] . '"' .
 				//				  '"' . $row["Phone"] . '"';
 
-				$searchResults .= '"' . $row["Name"] . '"' . "\n" . '"' . $row["Email"] . '"' . "\n" . '"' . $row["Phone"] . '"';
+				$searchResults .= "\n" . '"' . $row["Name"] . '"' . "\n" . '"' . $row["Email"] . '"' . "\n" . '"' . $row["Phone"] . '"';
 			}
 		}
 
