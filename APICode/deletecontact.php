@@ -23,6 +23,8 @@
 	else
 	{
 		$sql = "delete from Contacts where ID = '" . $row["ID"] . "'";
+
+		echo $row["ID"];
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
