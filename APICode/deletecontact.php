@@ -34,13 +34,13 @@
 
 	returnWithError("CONTACT DELETED!");
 
-	// Figure out person being selected, then get ID from sql, then delete from sql with sql command. 
-	// Maybe return $row["UserID"]
+	// Figure out person being selected, then get ID from sql, then delete person from sql with sql command. 
+	// Maybe return $row["ID"]
 	function getID()
 	{
 		$thing = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"];
 
-		return $row["UserID"];
+		return $row["ID"];
 	}
 	
 	function getRequestInfo()
