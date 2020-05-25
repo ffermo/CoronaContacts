@@ -32,13 +32,13 @@
 
 		// NOTE: Missing ORDER BY $filter"
 
-		$orderBy = !empty($_GET["orderby"]) ? $_GET["orderby"] : "name";
+		// $orderBy = !empty($_GET["orderby"]) ? $_GET["orderby"] : "name";
 
-   		$order = !empty($_GET["order"]) ? $_GET["order"] : "asc";
+   		// $order = !empty($_GET["order"]) ? $_GET["order"] : "asc";
 
     	// $sql = "SELECT * FROM countries ORDER BY " . $orderBy . " " . $order;
 
-		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] . $orderBy . " " . $order;
+		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] . "ORDER BY" . $filter;
 
 
 		$result = $conn->query($sql);
