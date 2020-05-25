@@ -15,15 +15,20 @@
 	// connecting to the localhost
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
+	// checking if the connection was successful or not
 	if ($conn->connect_error) 
 	{
+		// if the connection was not successfull return an error 
 		returnWithError( $conn->connect_error );
 	} 
 
+	// if the connection was successful 
 	else
 	{
+		// using sql to store the data fields into the database.
 		$sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
 		
+		// ???
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
