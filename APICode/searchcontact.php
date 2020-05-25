@@ -53,7 +53,13 @@
 				}
 				$searchCount++;
 				// $searchResults .= '"' . $row["Name"] . '"';
-				$searchResults .= '' . $row["Name"] . '' . $row["Email"] . '';
+				$searchResults .= ‘“‘ . $row[“Name”] . ‘“‘ . PHP_EOL .
+								‘“‘ . $row[“Email”] . ‘“‘ . PHP_EOL .
+								‘“‘ . $row[“City”] . ‘“‘ . PHP_EOL .
+								‘“‘ . $row[“State”] . ‘“‘ . PHP_EOL .
+								‘“‘ . $row[“Zip”] . ‘“‘ . PHP_EOL .
+								‘“‘ . $row[“Phone”] . ‘“‘ . PHP_EOL .
+								‘“‘ . $row[“Infected”] . ‘“‘;
 			}
 		}
 
