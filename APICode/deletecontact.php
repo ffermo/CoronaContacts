@@ -1,16 +1,10 @@
 <?php
 	$inData = getRequestInfo();
-	$ID = getID();
+	// $ID = getID();
 
-	$searchResults = "";
-	
-	$name = $inData["name"];
-	$email = $inData["email"];
-	$city = $inData["city"];
-	$state = $inData["state"];
-	$zip = $inData["zip"];
-	$phone = $inData["phone"];
-	$infected = $inData["infected"];
+	// $searchResults = "";
+	// NOTE: Variables (might change later)
+	$ID = $inData["ID"];
 	$userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
@@ -33,15 +27,6 @@
 	}
 
 	returnWithError("CONTACT DELETED!");
-
-	// Figure out person being selected, then get ID from sql, then delete person from sql with sql command. 
-	// Maybe return $row["ID"]
-	function getID()
-	{
-		$thing = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"];
-
-		return $row["ID"];
-	}
 	
 	function getRequestInfo()
 	{
