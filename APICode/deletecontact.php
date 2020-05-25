@@ -1,5 +1,8 @@
 <?php
 	$inData = getRequestInfo();
+	$ID = getID();
+
+	$searchResults = "";
 	
 	$name = $inData["name"];
 	$email = $inData["email"];
@@ -19,7 +22,7 @@
 
 	else
 	{
-		$sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
+		$sql = "delete from Contacts where ID = '" . $row["ID"] . "'";
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
@@ -28,8 +31,17 @@
 		
 		$conn->close();
 	}
-	
+
 	returnWithError("CONTACT DELETED!");
+
+	// Figure out person being selected, then get ID from sql, then delete from sql with sql command. 
+	// Maybe return $row["UserID"]
+	function getID()
+	{
+		$thing = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"];
+
+		return $row["UserID"];
+	}
 	
 	function getRequestInfo()
 	{
