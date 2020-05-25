@@ -34,7 +34,7 @@
 		$conn->close();
 	}
 	
-	returnWithError("CONTACT CREATED!");
+	returnWithError("CONTACT UPDATED!");
 	
 	function getRequestInfo()
 	{
