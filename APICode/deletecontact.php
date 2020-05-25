@@ -16,7 +16,7 @@
 
 	else
 	{
-		$sql = "delete from Contacts where ID = '" . $row["ID"] . "'";
+		$sql = "delete from Contacts where ID = '" . $ID . "'";
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
