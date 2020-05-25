@@ -51,10 +51,12 @@
 				{
 					$searchResults .= ",";
 				}
+				
 				$searchCount++;
 				// $searchResults .= '"' . $row["Name"] . '"';
 				$searchResults .= '"' . $row["Name"] . '"' .
-								'"' . $row["Email"] . '"';
+								  '"' . $row["Email"] . '"' .
+								  '"' . $row["Phone"] . '"';
 			}
 		}
 
