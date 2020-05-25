@@ -34,22 +34,26 @@
 			returnWithError( $conn->error );
 		}
 		
+		// closing the connection with the localhost
 		$conn->close();
 	}
 	
+	// basically depicts that our API works
 	returnWithError("CONTACT CREATED!");
 	
+	// function to get info from the user
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
 	}
-
+	// function for ???
 	function sendResultInfoAsJson( $obj )
 	{
 		header('Content-type: application/json');
 		echo $obj;
 	}
 	
+	// function that returns error messages
 	function returnWithError( $err )
 	{
 		$retValue = '{"error":"' . $err . '"}';
