@@ -7,6 +7,7 @@
 
 	// Contacts: name, email, city, state, zip, phone
 
+	// Parse and store individuals fields from JSON field into variables.
 	$name = $inData["name"];
 	$email = $inData["email"];
 	$city = $inData["city"];
