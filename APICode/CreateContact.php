@@ -1,6 +1,8 @@
 <?php
+	// requesting users input
 	$inData = getRequestInfo();
 	
+	// defining all the required fields for the contacts
 	$name = $inData["name"];
 	$email = $inData["email"];
 	$city = $inData["city"];
@@ -10,6 +12,7 @@
 	$infected = $inData["infected"];
 	$userId = $inData["userId"];
 
+	// connecting to the localhost
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
 	if ($conn->connect_error) 
