@@ -30,7 +30,7 @@
 
 		// $sql = "SELECT * FROM Contacts WHERE UserID = ‘$userId’ AND (Name like ‘%$search%’ OR Email like ‘%$search%’ OR City like ‘%$search%’ OR State like ‘%$search%’ OR Zip like ‘%$search%’ OR Phone like ‘%$search%’)";
 
-		$sql = "select * from Contacts where Name like '%" . $inData["search"] . "%' and Email like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
+		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%') and UserID=" . $inData["userId"];
 
 
 		$result = $conn->query($sql);
