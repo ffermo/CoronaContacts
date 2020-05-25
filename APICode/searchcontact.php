@@ -60,7 +60,9 @@
 				//				  '"' . $row["Email"] . '"' .
 				//				  '"' . $row["Phone"] . '"';
 
-				$searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"' . "\n" . 'UserId: "' . $row["UserID"] . '"';
+				// $searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"' . "\n" . 'UserId: "' . $row["UserID"] . '"';
+
+				$searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"';
 			}
 		}
 
