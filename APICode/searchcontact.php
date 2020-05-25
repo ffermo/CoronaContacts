@@ -38,7 +38,9 @@
 
     	// $sql = "SELECT * FROM countries ORDER BY " . $orderBy . " " . $order;
 
-		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] . "ORDER BY" . $name . "DESC";
+		// $sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] . "ORDER BY" . $name . "DESC";
+
+		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"];
 
 
 		$result = $conn->query($sql);
