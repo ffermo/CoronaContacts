@@ -53,7 +53,7 @@
 				}
 				$searchCount++;
 				// $searchResults .= '"' . $row["Name"] . '"';
-				$searchResults .= '"' . $row["Name"] . '"' . $row["Email"] . '"'
+				$searchResults .= '"' . $row["Name"] . '"' . $row["Email"] . '"';
 			}
 		}
 
