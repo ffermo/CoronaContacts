@@ -51,12 +51,14 @@
 				{
 					$searchResults .= ",";
 				}
-				
+
 				$searchCount++;
 				// $searchResults .= '"' . $row["Name"] . '"';
-				$searchResults .= '"' . $row["Name"] . '"' .
-								  '"' . $row["Email"] . '"' .
-								  '"' . $row["Phone"] . '"';
+				// $searchResults .= '"' . $row["Name"] . '"' .
+				//				  '"' . $row["Email"] . '"' .
+				//				  '"' . $row["Phone"] . '"';
+
+				$searchResults .= '"' . $row["Name"] . '"' . "\r\n" . '"' . $row["Email"] . '"';
 			}
 		}
 
