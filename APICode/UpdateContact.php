@@ -23,7 +23,16 @@
 	{
 		// To update info already in a table.: UPDATE [table name] SET Select_priv = 'Y',Insert_priv = 'Y',Update_priv = 'Y' where [field name] = 'user';
 
-		$sql = "UPDATE Contacts SET Name = '$name', Email = '$email', City = '$city', State = '$state', Zip = '$zip', Phone = '$phone', Infected = '$infected' WHERE ID = '$ID'";
+		$sql = "UPDATE Contacts SET 
+		Name = '$name', 
+		Email = '$email', 
+		City = '$city', 
+		State = '$state', 
+		Zip = '$zip', 
+		Phone = '$phone', 
+		Infected = '$infected' 
+
+		WHERE ID = '$ID'";
 
 		// $sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
 		
