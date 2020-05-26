@@ -15,29 +15,32 @@
 
 	else
 	{
-		$sql = "SELECT email FROM Users where Password='" . $inData["password"] . "'";
+		$sql = "SELECT * FROM Users WHERE Password='$password' AND Email='$email'";
 		
 		$result = $conn->query($sql);
 		
 		if ($result->num_rows > 0)
 		{
 			$row = $result->fetch_assoc();
-			$email = $row["email"];
-			$passsord = $row["password"];
-			// $id = $row["ID"];
+			$firstName .= $row["FirstName"];
+			$lastName .= $row["LastName"];
+			$id .= $row["ID"];
 			
-			// returnWithInfo($firstName, $lastName, $id );
+			returnWithInfo($firstName, $lastName, $id);
 		}
 		
 		else
 		{
-			returnWithError( "No Records Found" );
+			$email = '';
+			$password = '';
+			$id = 0;
+
+			returnWithInfo($firstName, $lastName, $id );
 		}
 		
 		$conn->close();
 	}
 
-	returnWithError("Login Complete");
 	
 	function getRequestInfo()
 	{
@@ -56,10 +59,10 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	// function returnWithInfo( $firstName, $lastName, $id )
-	// {
-	//	$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . //'","lastName":"' . $lastName . '","error":""}';
-	//	sendResultInfoAsJson( $retValue );
-	// }
+	function returnWithInfo( $firstName, $lastName, $id )
+	{
+		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		sendResultInfoAsJson( $retValue );
+	}
 	
 ?>
