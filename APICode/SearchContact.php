@@ -41,7 +41,19 @@
 
 		// $sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] . "ORDER BY" . $name . "DESC";
 
-		$sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"];
+		// Select anything from contacts in any field as long as it has our string
+		// string can be anywhere in field
+		$sql = "SELECT * from Contacts WHERE 
+		(
+		Name LIKE '%" . $inData["search"] . "%' OR 
+		Email LIKE '%" . $inData["search"] . "%' OR 
+		City LIKE '%" . $inData["search"] . "%' OR 
+		State LIKE '%" . $inData["search"] . "%' OR 
+		Zip LIKE '%" . $inData["search"] . "%' OR 
+		Phone LIKE '%" . $inData["search"] . "%'
+		)
+
+		AND UserID =" . $inData["userId"];
 
 
 		$result = $conn->query($sql);
