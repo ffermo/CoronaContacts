@@ -4,6 +4,8 @@ var extension = 'php';
 var userId = 0;
 var firstName = "";
 var lastName = "";
+var email = "";
+var password =""
 
 function doLogin()
 {
@@ -37,6 +39,57 @@ function doLogin()
 			        return;
 		}
 
+		firstName = jsonObject.firstName;
+		lastName = jsonObject.lastName;
+
+		saveCookie();
+
+		window.location.href = "dashboard.html";
+		
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
+}
+
+function doRegister()
+{
+	// userId = 0;
+    // firstName = "";
+	// lastName = "";
+	// email = "";
+	// password = "";
+
+	var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+	//var hash = md5(password);
+
+	document.getElementById("loginResult").innerHTML = "";
+
+	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
+	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "'+ email + '", "password" : "' + password + '"}';
+	var url = urlBase + '/Register.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.send(jsonPayload);
+		var jsonObject = JSON.parse( xhr.responseText );
+		userId = jsonObject.id;
+
+		if( userId < 1  )
+		{
+			        document.getElementById("regResults").innerHTML = "Reg Failed combination incorrect";
+			        return;
+		}
+
+		document.getElementById("regResults").innerHTML = "In Database";
 		firstName = jsonObject.firstName;
 		lastName = jsonObject.lastName;
 
