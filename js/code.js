@@ -89,7 +89,7 @@ function doRegister()
 			        return;
 		}
 
-		document.getElementById("regResults").innerHTML = "In Database";
+		document.getElementById("regResult").innerHTML = "In Database";
 		firstName = jsonObject.firstName;
 		lastName = jsonObject.lastName;
 
@@ -100,7 +100,7 @@ function doRegister()
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("regResult").innerHTML = err.message;
 	}
 }
 	
