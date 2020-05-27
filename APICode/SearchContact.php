@@ -81,9 +81,9 @@
 				"id":"' . $row["ID"] . '",
 				"name":"' . $row["Name"] . '",
 				"email":"' . $row["Email"] . '",
-				"city":"' . $row["city"] . '",
-				"state":"' . $row["state"] . '",
-				"zip":"' . $row["zip"] . '",
+				"city":"' . $row["City"] . '",
+				"state":"' . $row["State"] . '",
+				"zip":"' . $row["Zip"] . '",
 				"phoneNumber":"' . $row["Phone"] . '",
 				"infected":"' . $row["Infected"] . '",
 				"contactId":"'. $row["ID"].'"
