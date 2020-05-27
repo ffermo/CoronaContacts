@@ -45,7 +45,7 @@ function doLogin()
 
 		saveCookie();
 
-		window.location.href = "dashboard.html";
+		window.location.href = "dashboard.php";
 		
 	}
 	catch(err)
@@ -96,7 +96,7 @@ function doRegister()
 
 		saveCookie();
 
-		window.location.href = "dashboard.html";
+		window.location.href = "dashboard.php";
 		
 	}
 	catch(err)
