@@ -8,13 +8,14 @@
 	// Contacts: name, email, city, state, zip, phone
 
 	// Parse and store individuals fields from JSON field into variables.
-	$name = $inData["name"];
-	$email = $inData["email"];
-	$city = $inData["city"];
-	$state = $inData["state"];
-	$zip = $inData["zip"];
-	$phone = $inData["phone"];
-	$infected = $inData["infected"];
+	// $name = $inData["name"];
+	// $email = $inData["email"];
+	// $city = $inData["city"];
+	// $state = $inData["state"];
+	// $zip = $inData["zip"];
+	// $phone = $inData["phone"];
+	// $infected = $inData["infected"];
+	
 	$userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
@@ -50,6 +51,7 @@
 		City LIKE '%" . $inData["search"] . "%' OR 
 		State LIKE '%" . $inData["search"] . "%' OR 
 		Zip LIKE '%" . $inData["search"] . "%' OR 
+		Infected LIKE '%" . $inData["search"] . "%' OR
 		Phone LIKE '%" . $inData["search"] . "%'
 		)
 
