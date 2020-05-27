@@ -7,9 +7,9 @@
 	// Parse and store individuals fields from JSON field into variables.
 	$ID = $inData["ID"];
 	$userId = $inData["userId"];
-
+	// establishing connection to localhost
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
-
+	// returning an error if the connection was not successfull
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
@@ -27,7 +27,7 @@
 		
 		$conn->close();
 	}
-
+	// Confirms that the API works
 	returnWithError("CONTACT DELETED!");
 	
 	function getRequestInfo()
