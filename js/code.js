@@ -62,8 +62,8 @@ function doRegister()
 	email = "";
 	password = "";
 
-	var first = document.getElementById("firstName").value;
-    var last = document.getElementById("lastName").value;
+	var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 	//var hash = md5(password);
@@ -71,7 +71,7 @@ function doRegister()
 	document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"first" : "' + first + '", "last" : "' + last + '", "email" : "'+ email + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"first" : "' + firstName + '", "last" : "' + lastName + '", "email" : "'+ email + '", "password" : "' + password + '"}';
 	var url = urlBase + '/Register.' + extension;
 
 	var xhr = new XMLHttpRequest();
@@ -110,5 +110,5 @@ function saveCookie()
 	    var minutes = 20;
 	    var date = new Date();
 	    date.setTime(date.getTime()+(minutes*60*1000));
-	    document.cookie = "firstName=" + firstName + ",last=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
