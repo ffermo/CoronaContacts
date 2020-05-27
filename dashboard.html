@@ -19,7 +19,20 @@
       </div>
 </head>
 <body>
-  
-  <p><?php echo $firstName ?></p>
+  <p>
+
+    <?php
+$array = array(1, 2, 3, 4);
+?>
+
+<table>
+<thead><tr><th>Number</th></tr></thead>
+<tbody>
+<?php foreach ($array as $num) : ?>
+<tr><td><?= htmlspecialchars($num) ?></td></tr>
+<?php endforeach ?>
+</tbody>
+</table>
+  </p>
 </body>
 </html>
