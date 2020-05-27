@@ -17,6 +17,7 @@
       </div>
 </head>
 <body>
-    
+  <?php include 'APICode/SearchContact.php';?>
+  <p>What's up</p>
 </body>
 </html>
