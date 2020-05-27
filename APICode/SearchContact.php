@@ -43,7 +43,7 @@
 
 		// Select anything from contacts in any field as long as it has our string
 		// string can be anywhere in field
-		$sql = "SELECT * from Contacts WHERE 
+		$sql = "SELECT * FROM Contacts WHERE 
 		(
 		Name LIKE '%" . $inData["search"] . "%' OR 
 		Email LIKE '%" . $inData["search"] . "%' OR 
@@ -64,7 +64,7 @@
 			{
 				if( $searchCount > 0 )
 				{
-					$searchResults .= ",";
+					$searchResults .= ",\n";
 				}
 
 				$searchCount++;
@@ -75,10 +75,12 @@
 
 				// $searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"' . "\n" . 'UserId: "' . $row["UserID"] . '"';
 
-				$searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"';
+				$searchResults .= '{"firstName":"' . $row["Name"] . '","email":"' . $row["Email"] . '","phoneNumber":"' . $row["Phone"] . '","infected":"' . $row["Infected"] . '","contactId":"'. $row["ID"].'"}' ;
 				
 				// Note for Reference: return all value and we do not have to show them all.
 			}
+
+			returnWithInfo( $searchResults );
 		}
 
 		else
@@ -88,7 +90,6 @@
 		$conn->close();
 	}
 
-	returnWithInfo( $searchResults );
 
 	function getRequestInfo()
 	{

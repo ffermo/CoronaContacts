@@ -1,3 +1,4 @@
+// Global variables.
 var urlBase = 'http://coronacontacts.club/APICode';
 var extension = 'php';
 
