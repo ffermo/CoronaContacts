@@ -25,6 +25,8 @@
     <?php
 $array = array(1, 2, 3, 4);
 ?>
+<?php 'include APICode/Login.php'; 
+  echo @firstName; ?>
 
 <table>
 <thead><tr><th>Number</th></tr></thead>
