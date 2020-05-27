@@ -8,16 +8,6 @@
 	// Contacts: name, email, city, state, zip, phone
 
 	// Parse and store individuals fields from JSON field into variables.
-<<<<<<< HEAD
-	$ID = $inData["id"];
-	$name = $inData["name"];
-	$email = $inData["email"];
-	$city = $inData["city"];
-	$state = $inData["state"];
-	$zip = $inData["zip"];
-	$phone = $inData["phone"];
-	$infected = $inData["infected"];
-=======
 	// $name = $inData["name"];
 	// $email = $inData["email"];
 	// $city = $inData["city"];
@@ -26,7 +16,6 @@
 	// $phone = $inData["phone"];
 	// $infected = $inData["infected"];
 	
->>>>>>> FrontEnd
 	$userId = $inData["userId"];
 
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
@@ -37,24 +26,6 @@
 	} 
 	else
 	{
-		// $sql = "select * from Contacts where Name like '%" . $inData["search"] . "%' and UserID=" . $inData["userId"];
-
-		//$sql = "SELECT contact_id, first_name, last_name, email, phone_number, user_id FROM list_of_contacts WHERE (first_name LIKE '%$search%' OR last_name LIKE '%$search%' OR email LIKE '%$search%' OR phone_number LIKE '%$search%') AND user_id = $userId ORDER BY $filter";
-
-		// $sql = "SELECT * FROM Contacts WHERE UserID = ‘$userId’ AND (Name like ‘%$search%’ OR Email like ‘%$search%’ OR City like ‘%$search%’ OR State like ‘%$search%’ OR Zip like ‘%$search%’ OR Phone like ‘%$search%’)";
-
-		// NOTE: Missing ORDER BY $filter"
-
-		// $orderBy = !empty($_GET["orderby"]) ? $_GET["orderby"] : "name";
-
-   		// $order = !empty($_GET["order"]) ? $_GET["order"] : "asc";
-
-    	// $sql = "SELECT * FROM countries ORDER BY " . $orderBy . " " . $order;
-
-		// $sql = "select * from Contacts where (Name like '%" . $inData["search"] . "%' or Email like '%" . $inData["search"] . "%' or City like '%" . $inData["search"] . "%' or State like '%" . $inData["search"] . "%' or Zip like '%" . $inData["search"] . "%' or Phone like '%" . $inData["search"] . "%') and UserID =" . $inData["userId"] . "ORDER BY" . $name . "DESC";
-
-		// Select anything from contacts in any field as long as it has our string
-		// string can be anywhere in field
 		$sql = "SELECT * FROM Contacts WHERE 
 		(
 		Name LIKE '%" . $inData["search"] . "%' OR 
@@ -62,15 +33,9 @@
 		City LIKE '%" . $inData["search"] . "%' OR 
 		State LIKE '%" . $inData["search"] . "%' OR 
 		Zip LIKE '%" . $inData["search"] . "%' OR 
-<<<<<<< HEAD
-		Phone LIKE '%" . $inData["search"] . "%' OR
-		Infected LIKE '%" . $inData["search"] . "%'
-=======
 		Infected LIKE '%" . $inData["search"] . "%' OR
 		Phone LIKE '%" . $inData["search"] . "%'
->>>>>>> FrontEnd
 		)
-
 		AND UserID =" . $inData["userId"];
 
 
@@ -86,12 +51,6 @@
 				}
 
 				$searchCount++;
-				// $searchResults .= '"' . $row["Name"] . '"';
-				// $searchResults .= '"' . $row["Name"] . '"' .
-				//				  '"' . $row["Email"] . '"' .
-				//				  '"' . $row["Phone"] . '"';
-
-				// $searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"' . "\n" . 'UserId: "' . $row["UserID"] . '"';
 
 				$searchResults .= '{
 				"id":"' . $row["ID"] . '",
@@ -113,7 +72,11 @@
 
 		else
 		{
-			returnWithError( "No Records Found" );
+			$searchResults .= '{
+			"contactId": -1
+			}';
+
+			returnWithInfo($searchResults);
 		}
 		$conn->close();
 	}
