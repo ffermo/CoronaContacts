@@ -8,6 +8,7 @@
 	// Contacts: name, email, city, state, zip, phone
 
 	// Parse and store individuals fields from JSON field into variables.
+	$ID = $inData["id"];
 	$name = $inData["name"];
 	$email = $inData["email"];
 	$city = $inData["city"];
@@ -50,7 +51,8 @@
 		City LIKE '%" . $inData["search"] . "%' OR 
 		State LIKE '%" . $inData["search"] . "%' OR 
 		Zip LIKE '%" . $inData["search"] . "%' OR 
-		Phone LIKE '%" . $inData["search"] . "%'
+		Phone LIKE '%" . $inData["search"] . "%' OR
+		Infected LIKE '%" . $inData["search"] . "%'
 		)
 
 		AND UserID =" . $inData["userId"];
@@ -75,7 +77,17 @@
 
 				// $searchResults .= "\r\n" . 'Name: "' . $row["Name"] . '"' . "\n" . 'Email: "' . $row["Email"] . '"' . "\n" . 'Phone: "' . $row["Phone"] . '"' . "\n" . 'UserId: "' . $row["UserID"] . '"';
 
-				$searchResults .= '{"firstName":"' . $row["Name"] . '","email":"' . $row["Email"] . '","phoneNumber":"' . $row["Phone"] . '","infected":"' . $row["Infected"] . '","contactId":"'. $row["ID"].'"}' ;
+				$searchResults .= '{
+				"id":"' . $row["ID"] . '",
+				"name":"' . $row["Name"] . '",
+				"email":"' . $row["Email"] . '",
+				"city":"' . $row["city"] . '",
+				"state":"' . $row["state"] . '",
+				"zip":"' . $row["zip"] . '",
+				"phoneNumber":"' . $row["Phone"] . '",
+				"infected":"' . $row["Infected"] . '",
+				"contactId":"'. $row["ID"].'"
+				}' ;
 				
 				// Note for Reference: return all value and we do not have to show them all.
 			}
