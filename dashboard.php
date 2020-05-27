@@ -37,6 +37,8 @@ $array = array(1, 2, 3, 4);
 </table>
   </p>
 
-  <?php echo "hello world" ?>
+  <?php include 'APICode/Login.php';
+    echo $firstName;
+  ?>
 </body>
 </html>
