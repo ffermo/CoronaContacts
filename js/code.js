@@ -2,16 +2,16 @@ var urlBase = 'http://coronacontacts.club/APICode';
 var extension = 'php';
 
 var userId = 0;
-var firstName = "";
-var lastName = "";
+var first = "";
+var last = "";
 var email = "";
-var password =""
+var password ="";
 
 function doLogin()
 {
 	userId = 0;
-	firstName = "";
-	lastName = "";
+	first = "";
+	last = "";
 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -55,14 +55,14 @@ function doLogin()
 
 function doRegister()
 {
-	// userId = 0;
-    // firstName = "";
-	// lastName = "";
-	// email = "";
-	// password = "";
+	userId = 0;
+    first = "";
+	last = "";
+	email = "";
+	password = "";
 
-	var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
+	var first = document.getElementById("first").value;
+    var last = document.getElementById("last").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 	//var hash = md5(password);
@@ -70,7 +70,7 @@ function doRegister()
 	document.getElementById("loginResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "email" : "'+ email + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"first" : "' + first + '", "last" : "' + last + '", "email" : "'+ email + '", "password" : "' + password + '"}';
 	var url = urlBase + '/Register.' + extension;
 
 	var xhr = new XMLHttpRequest();
@@ -109,5 +109,5 @@ function saveCookie()
 	    var minutes = 20;
 	    var date = new Date();
 	    date.setTime(date.getTime()+(minutes*60*1000));
-	    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	    document.cookie = "first=" + first + ",last=" + last + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
