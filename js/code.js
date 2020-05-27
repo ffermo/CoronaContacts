@@ -10,7 +10,7 @@ var password ="";
 
 function doLogin()
 {
-	userId = 0;
+	userId;
 	firstName = "";
 	lastName = "";
 
@@ -56,7 +56,7 @@ function doLogin()
 
 function doRegister()
 {
-	userId = 0;
+	userId;
     firstName = "";
 	lastName = "";
 	email = "";
