@@ -62,13 +62,13 @@ function doRegister()
 	email = "";
 	password = "";
 
-	var first = document.getElementById("first").value;
-    var last = document.getElementById("last").value;
+	var first = document.getElementById("firstName").value;
+    var last = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 	//var hash = md5(password);
 
-	document.getElementById("loginResult").innerHTML = "";
+	document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"first" : "' + first + '", "last" : "' + last + '", "email" : "'+ email + '", "password" : "' + password + '"}';
@@ -86,7 +86,7 @@ function doRegister()
 
 		if( userId < 1  )
 		{
-			        document.getElementById("regResults").innerHTML = "Reg Failed combination incorrect";
+			        document.getElementById("regResult").innerHTML = "E-mail already exists!";
 			        return;
 		}
 
