@@ -3,16 +3,16 @@ var urlBase = 'http://coronacontacts.club/APICode';
 var extension = 'php';
 
 var userId = 0;
-var first = "";
-var last = "";
+var firstName = "";
+var lastName = "";
 var email = "";
 var password ="";
 
 function doLogin()
 {
 	userId = 0;
-	first = "";
-	last = "";
+	firstName = "";
+	lastName = "";
 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -57,8 +57,8 @@ function doLogin()
 function doRegister()
 {
 	userId = 0;
-    first = "";
-	last = "";
+    firstName = "";
+	lastName = "";
 	email = "";
 	password = "";
 
@@ -110,5 +110,5 @@ function saveCookie()
 	    var minutes = 20;
 	    var date = new Date();
 	    date.setTime(date.getTime()+(minutes*60*1000));
-	    document.cookie = "first=" + first + ",last=" + last + ",userId=" + userId + ";expires=" + date.toGMTString();
+	    document.cookie = "firstName=" + firstName + ",last=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
