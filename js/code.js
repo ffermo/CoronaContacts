@@ -189,7 +189,7 @@ function searchContact()
 					}
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = name;
+				document.getElementsById("mudit")[0].innerHTML = name;
 			}
 		};
 		xhr.send(jsonPayload);
