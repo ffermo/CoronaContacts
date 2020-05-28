@@ -182,7 +182,7 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
 					test_name += jsonObject.results[i].name;
-					document.getElementById("mudit").innerHTML = test_name;
+					document.getElementsByTag("p")[i].innerHTML = test_name;
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
