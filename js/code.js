@@ -181,15 +181,14 @@ function searchContact()
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
-					test_name += jsonObject.results[i].name;
+					test_name += jsonObject.results[i].city;
 					if( i < jsonObject.results.length - 1 )
 					{	
 						test_name += "<br />\r\n";
 					}
 				}
 				document.getElementById("print_sector").innerHTML = test_name;
-				wrapper.innerHTML = test_name;
-				document.getElementsByTagName("p")[i].innerHTML = test_name;
+				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
 		};
