@@ -119,7 +119,7 @@ function saveCookie()
 function searchContact()
 {
 	var srch = document.getElementById("searchText").value;
-	document.getElementById("colorSearchResult").innerHTML = "";
+	document.getElementById("searchResults").innerHTML = "";
 	
 	var colorList = "";
 	
@@ -154,7 +154,7 @@ function searchContact()
 	}
 	catch(err)
 	{
-		document.getElementById("colorSearchResult").innerHTML = err.message;
+		document.getElementById("searchResults").innerHTML = err.message;
 	}
 	
 }
