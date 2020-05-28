@@ -182,15 +182,14 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
 					test_name += jsonObject.results[i].name;
-					console.log(test_name);
 					if( i < jsonObject.results.length - 1 )
 					{	
-		
 						test_name += "<br />\r\n";
 					}
 				}
+				document.getElementById("print_sector").innerHTML = test_name;
 				wrapper.innerHTML = test_name;
-				document.getElementsByTagName("p")[i].innerHTML = test_name;
+				document.getElementsByTagName("p").innerHTML = test_name;
 
 			}
 		};
@@ -203,3 +202,22 @@ function searchContact()
 	}
 	
 }
+
+
+{/* <div class="row justify-content-center">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>name</th>
+				<th>etc.</th>
+				<th>buttons</th>
+			</tr>
+		</thead>
+
+		//while loop
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+	</table>
+</div> */}
