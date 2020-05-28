@@ -96,6 +96,8 @@ function doRegister()
 
 		saveCookie();
 
+		alert("Successfully Registered");
+		
 		window.location.href = "dashboard.php";
 		
 	}
