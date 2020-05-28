@@ -151,7 +151,6 @@ function readCookie()
 
 function searchContact()
 {
-	alert("Search Utilitzed");
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
 
