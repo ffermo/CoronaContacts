@@ -156,12 +156,12 @@ function searchContact()
 
 	// Json DB elements
 	var name = "";
-	// var email = "";
-	// var city = "";
-	// var state = "";
-	// var zip = "";
-	// var phoneNumber = "";
-	// var infected = "";
+	var email = "";
+	var city = "";
+	var state = "";
+	var zip = "";
+	var phoneNumber = "";
+	var infected = "";
 
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -186,7 +186,13 @@ function searchContact()
 				{
 					// Needs to convert to 
 					name += jsonObject.results[i].name;
-					// infected += jsonObject.results[i].infected;
+					email += jsonObject.results[i].email;
+					city += jsonObject.results[i].city;
+					state += jsonObject.results[i].state;
+					zip += jsonObject.results[i].zip;
+					phoneNumber += jsonObject.results[i].phoneNumber;
+					infected += jsonObject.results[i].infected;
+					
 					if( i < jsonObject.results.length - 1 )
 					{	
 						name += "<br />\r\n";
