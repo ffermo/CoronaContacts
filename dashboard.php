@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css" />
+    <script type="text/javascript" src="js/md5.js"></script> 
     <title>Dashboard</title>
     <div class="jumbotron">
         <h1 class="display-4">Hello, UserName!</h1>
@@ -18,34 +19,14 @@
       </div>
 </head>
 <body>
-  <p>
 
-<?php
-$array = array(1, 2, 3, 4);
-?>
-<?php 'include APICode/Login.php'; 
-  echo @firstName; ?>
-
-<table>
-<thead><tr><th>Number</th></tr></thead>
-<tbody>
-
-<?php foreach ($array as $num) : ?>
-<tr><td><?= htmlspecialchars($num) ?></td></tr>
-<?php endforeach ?>
-
-</tbody>
-</table>
-  </p>
-  <?php echo "<script type='text/javascript' src='js/code.js'></script>; 
-  <input id='info' type='button' value='Customer Info'>
-<div id='myDiv'>
+<input id="info" type="button" value="Customer Info">
+<div id="myDiv">
     <form>Name:
-        <input type='text' value='' id='name' name='name'>
+        <input type="text" value="" id="name" name="name">
         </input>
     </form>
-</div>"
-?>
-  
+</div>
+
 </body>
 </html>
