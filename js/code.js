@@ -155,7 +155,7 @@ function searchContact()
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
 
-	var colorList = "testing";
+	var colorList = "testing ";
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
 	
@@ -172,8 +172,9 @@ function searchContact()
 				var jsonObject = JSON.parse( xhr.responseText );
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
-				{
-					colorList += jsonObject.name[i];
+				{	
+					
+					colorList += jsonObject.results.name[i];
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
