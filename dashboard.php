@@ -39,8 +39,7 @@
   <?php
     while($row =$result->fetch_assoc()): ?>
     <tr>
-      <td><?php echo $row['Name'];?></td>
-      <td><?php echo $row['City'];?></td>
+      <td><?php echo $row['name'];?></td>
       <td></td>
     </tr>
     <?php endwhile; ?>
