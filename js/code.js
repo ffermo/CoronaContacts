@@ -164,6 +164,10 @@ function searchContact()
 	var phoneNumber = "";
 	var infected = "";
 
+	// Variables for Table
+	var td = document.createElemnent("td");
+	var btn = document.createTextNode("input");
+
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
@@ -205,6 +209,7 @@ function searchContact()
 						zip += "<br />\r\n";
 						phoneNumber += "<br />\r\n";
 						infected += "<br />\r\n";
+						btn;
 					
 						
 						// do the same thing with all the field
