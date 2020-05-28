@@ -154,19 +154,21 @@ function searchContact()
 	alert("Search Utilitzed");
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
-	var wrapper = document.getElementById("mudit");
-	var test_name = "";
-	var email = "";
-	var city = "";
-	var state = "";
-	var zip = "";
-	var phoneNumber = "";
+
+	// Json DB elements
+	var name = "";
+	// var email = "";
+	// var city = "";
+	// var state = "";
+	// var zip = "";
+	// var phoneNumber = "";
 	var infected = "";
 
-
+	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
 	
+	// API Call
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -175,19 +177,25 @@ function searchContact()
 		xhr.onreadystatechange = function() 
 		{
 			if (this.readyState == 4 && this.status == 200) 
-			{
+			{	
+				// Text displays to inform client the search results are displayed. 
 				document.getElementById("searchResults").innerHTML = "Resulting Search Displayed";
 				var jsonObject = JSON.parse( xhr.responseText );
 				
+				
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
-					test_name += jsonObject.results[i].name;
+					// Needs to convert to 
+					name += jsonObject.results[i].name;
+					infected += jsonObject.results[i].infected;
 					if( i < jsonObject.results.length - 1 )
 					{	
-						test_name += "<br />\r\n";
+						name += "<br />\r\n";
 					}
 				}
-				document.getElementById("print_sector").innerHTML = test_name;
+				document.getElementById("mudit").innerHTML = name;
+				document.getElementById("infected").innerHTML = infected;
+
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
