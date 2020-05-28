@@ -72,11 +72,8 @@
 
 		else
 		{
-			$searchResults .= '{
-			"contactId": -1
-			}';
-
-			returnWithInfo($searchResults);
+			$err = "No results found";
+			returnWithError($err);
 		}
 		$conn->close();
 	}
