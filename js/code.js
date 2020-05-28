@@ -8,12 +8,13 @@ var lastName = "";
 var email = "";
 var password ="";
 
+function displayName()
+{
+	document.getElementById("userFirstName").innerHTML = "Howdy!" + userId;
+}
+
 function doLogin()
 {
-	userId = 0;
-	firstName = "";
-	lastName = "";
-
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 	//var hash = md5(password);
@@ -56,12 +57,6 @@ function doLogin()
 
 function doRegister()
 {
-	userId = 0;
-    firstName = "";
-	lastName = "";
-	email = "";
-	password = "";
-
 	var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
@@ -113,7 +108,7 @@ function saveCookie()
 	    var minutes = 20;
 	    var date = new Date();
 	    date.setTime(date.getTime()+(minutes*60*1000));
-	    document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
+	    document.cookie = "firstName=" + firstName + ", lastName=" + lastName + ", userId=" + userId + ";expires=" + date.toGMTString();
 }
 
 function readCookie()
@@ -129,13 +124,13 @@ function readCookie()
 		{
 			firstName = tokens[1];
 		}
-		else if( tokens[0] == "lastName" )
+		if( tokens[0] == "lastName" )
 		{
 			lastName = tokens[1];
 		}
-		else if( tokens[0] == "userId" )
+		if( tokens[0] == "userId" )
 		{
-			userId = parseInt( tokens[1].trim() );
+			userId = parseInt(tokens[1]);
 		}
 	}
 	
