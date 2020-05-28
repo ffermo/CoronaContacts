@@ -189,7 +189,7 @@ function searchContact()
 				}
 				document.getElementById("print_sector").innerHTML = test_name;
 				wrapper.innerHTML = test_name;
-				document.getElementsByTagName("p").innerHTML = test_name;
+				document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
 		};
