@@ -155,7 +155,7 @@ function searchContact()
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
 	var colorList = "";
-	var name = "";
+	var test_name = "";
 	var email = "";
 	var city = "";
 	var state = "";
@@ -181,15 +181,15 @@ function searchContact()
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
-					name += jsonObject.results[i].name;
+					test_name += jsonObject.results[i].name;
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
-						name += "<br />\r\n";
+						test_name += "<br />\r\n";
 					}
 				}
 				
-				document.getElementById("mudit")[0].innerHTML = name;
+				document.getElementById("mudit").innerHTML = test_name;
 			}
 		};
 		xhr.send(jsonPayload);
