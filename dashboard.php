@@ -25,7 +25,30 @@
   $mysqli = new mysqli("localhost", "faizar", "", "coronacontacts");
   $result = $mysqli->query("SELECT * FROM Contacts");
   pre_r($result);
+  ?>
 
+  <div class="row justify-content-center">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Column1</th>
+          <th>Column2</th>
+          <th colspan="2">Column3</th>
+        </tr> 
+      </thead>
+  <?php
+    while($row =$result->fetch_assoc()): ?>
+    <tr>
+      <td><?php echo $row['Name'];?></td>
+      <td><?php echo $row['City'];?></td>
+      <td></td>
+    </tr>
+    <?php endwhile; ?>
+
+    </table>
+  </div>
+
+  <?php
   function pre_r( $array ) {
     echo '<pre>';
     print_r($array);
