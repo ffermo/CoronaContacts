@@ -163,7 +163,6 @@ function searchContact()
 	var zip = "";
 	var phoneNumber = "";
 	var infected = "";
-	var other = "";
 
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -219,7 +218,6 @@ function searchContact()
 				document.getElementById("zipField").innerHTML = zip;
 				document.getElementById("phoneNumberField").innerHTML = phoneNumber;
 				document.getElementById("infectedField").innerHTML = infected;
-				document.getElementById("other").innerHTML = other;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
