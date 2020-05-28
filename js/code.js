@@ -190,7 +190,7 @@ function searchContact()
 					}
 				}
 				wrapper.innerHTML = test_name;
-				document.getElementsByTag("p")[i].innerHTML = test_name;
+				document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
 		};
