@@ -209,7 +209,7 @@ function searchContact()
 						zip += "<br />\r\n";
 						phoneNumber += "<br />\r\n";
 						infected += "<br />\r\n";
-						btn;
+						// btn;
 					
 						
 						// do the same thing with all the field
