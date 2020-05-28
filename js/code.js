@@ -157,4 +157,5 @@ function searchContact()
 		document.getElementById("searchResults").innerHTML = err.message;
 	}
 	
+	alert("Search Utilitzed");
 }
