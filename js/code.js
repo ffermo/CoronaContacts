@@ -169,7 +169,7 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("searchResults").innerHTML = "Color(s) has been retrieved";
+				document.getElementById("searchResults").innerHTML = "Resulting Search Displayed";
 				var jsonObject = JSON.parse( xhr.responseText );
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
