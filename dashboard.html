@@ -18,8 +18,9 @@
         </p>
       </div>
 </head>
-<body>
-  <!-- <div class="card" style="width: 18rem;">
+<body onload="readCookie(); searchContact();">
+
+  <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Search Users</h5>
       <span id="searchResults">...</span>
@@ -33,15 +34,11 @@
         />
       </div>
       <p id="colorList">
-      </p><br /><br /> -->
-    <input type="text" id="searchText" placeholder="Search"/>
-	<button type="button" id="searchColorButton" class="buttons" onclick="searchContact();"> Search Contact </button><br />
-	<span id="searchResults"></span>
-	<p id="colorList">
-	</p><br /><br />
-      <!-- <a class="btn btn-primary" onclick="searchContact();">Search Contacts</a> -->
-    <!-- </div>
-  </div> -->
+      </p><br /><br />
+  
+      <a class="btn btn-primary" onclick="searchContact();">Search Contacts</a>
+    </div>
+  </div>
 
 </body>
 
