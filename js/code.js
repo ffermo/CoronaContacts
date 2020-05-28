@@ -182,10 +182,10 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
 					test_name += jsonObject.results[i].name;
-					
+					console.log(test_name);
 					if( i < jsonObject.results.length - 1 )
 					{	
-						
+		
 						test_name += "<br />\r\n";
 					}
 				}
