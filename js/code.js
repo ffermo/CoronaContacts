@@ -187,11 +187,7 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
 					// Needs to convert to 
-					var row = table.insertRow(i);
-					var cell1 = row.insertCell(i);
-					var cell2 = row.insertCell(i);
-					cell1.innerHTML = "NEW CELL1";
-					cell2.innerHTML = "NEW CELL2";
+				
 					name += jsonObject.results[i].name;
 					email += jsonObject.results[i].email;
 					city += jsonObject.results[i].city;
@@ -210,6 +206,11 @@ function searchContact()
 						zip += "<br />\r\n";
 						phoneNumber += "<br />\r\n";
 						infected += "<br />\r\n";
+						var row = table.insertRow(i);
+						var cell1 = row.insertCell(i);
+						var cell2 = row.insertCell(i);
+						cell1.innerHTML = "NEW CELL1";
+						cell2.innerHTML = "NEW CELL2";
 						
 						// do the same thing with all the field
 					}
