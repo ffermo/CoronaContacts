@@ -155,6 +155,7 @@ function searchContact()
 	document.getElementById("searchResults").innerHTML = "";
 
 	// Json DB elements
+	var table = document.getElementById("contactTable");
 	var name = "";
 	var email = "";
 	var city = "";
@@ -162,7 +163,7 @@ function searchContact()
 	var zip = "";
 	var phoneNumber = "";
 	var infected = "";
-	var other =""
+	var other = "";
 
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -186,6 +187,11 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
 					// Needs to convert to 
+					var row = table.insertRow(i);
+					var cell1 = row.insertCell(i);
+					var cell2 = row.insertCell(i);
+					cell1.innerHTML = "NEW CELL1";
+					cell2.innerHTML = "NEW CELL2";
 					name += jsonObject.results[i].name;
 					email += jsonObject.results[i].email;
 					city += jsonObject.results[i].city;
@@ -193,7 +199,7 @@ function searchContact()
 					zip += jsonObject.results[i].zip;
 					phoneNumber += jsonObject.results[i].phoneNumber;
 					infected += jsonObject.results[i].infected;
-					other += other;
+					
 					
 					if( i < jsonObject.results.length - 1 )
 					{	
