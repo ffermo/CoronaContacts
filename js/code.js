@@ -193,7 +193,7 @@ function searchContact()
 						name += "<br />\r\n";
 					}
 				}
-				document.getElementById("mudit").innerHTML = name;
+				document.getElementById("name").innerHTML = name;
 				document.getElementById("infected").innerHTML = infected;
 
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
