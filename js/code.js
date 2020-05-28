@@ -163,7 +163,7 @@ function searchContact()
 	var zip = "";
 	var phoneNumber = "";
 	var infected = "";
-	var btn = document.createElement("input");
+	var btn = document.createElement("button");
 
 	// Variables for Table
 	
