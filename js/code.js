@@ -10,7 +10,7 @@ var password ="";
 
 function displayName()
 {
-	document.getElementById("userFirstName").innerHTML = "Howdy!" + userId;
+	document.getElementById("userFirstName").innerHTML = "Hello " + firstName +"!";
 }
 
 function doLogin()
@@ -136,11 +136,10 @@ function readCookie()
 	
 	if( userId < 0 )
 	{
-		window.location.href = "index.html";
+		window.location.href = "login.html";
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
 	}
 }
 
