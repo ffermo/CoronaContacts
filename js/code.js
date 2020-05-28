@@ -156,7 +156,7 @@ function searchContact()
 	document.getElementById("searchResults").innerHTML = "";
 
 	var colorList = "";
-	
+	var test = "hello";
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
 	
@@ -176,7 +176,7 @@ function searchContact()
 				{
 					colorList += jsonObject.results[i];
 					if( i < jsonObject.results.length - 1 )
-					{
+					{	test;
 						colorList += "<br />\r\n";
 					}
 				}
