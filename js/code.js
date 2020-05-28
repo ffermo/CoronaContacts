@@ -151,11 +151,13 @@ function searchContact()
 			}
 		};
 		xhr.send(jsonPayload);
+
+		alert("Search Utilitzed");
+
 	}
 	catch(err)
 	{
 		document.getElementById("searchResults").innerHTML = err.message;
 	}
 	
-	alert("Search Utilitzed");
 }
