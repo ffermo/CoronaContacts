@@ -162,7 +162,7 @@ function searchContact()
 	// var state = "";
 	// var zip = "";
 	// var phoneNumber = "";
-	var infected = "";
+	// var infected = "";
 
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -187,7 +187,7 @@ function searchContact()
 				{
 					// Needs to convert to 
 					name += jsonObject.results[i].name;
-					infected += jsonObject.results[i].infected;
+					// infected += jsonObject.results[i].infected;
 					if( i < jsonObject.results.length - 1 )
 					{	
 						name += "<br />\r\n";
