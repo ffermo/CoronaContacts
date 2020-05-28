@@ -196,8 +196,10 @@ function searchContact()
 					if( i < jsonObject.results.length - 1 )
 					{	
 						name += "<br />\r\n";
+						// do the same thing with all the field
 					}
 				}
+				document.getElementById("print_sector").innerHTML = name;
 				document.getElementById("nameField").innerHTML = name;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
