@@ -154,6 +154,7 @@ function searchContact()
 	alert("Search Utilitzed");
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
+	var wrapper = document.getElementById("mudit");
 	var test_name = "";
 	var email = "";
 	var city = "";
@@ -188,6 +189,7 @@ function searchContact()
 						test_name += "<br />\r\n";
 					}
 				}
+				wrapper.innerHTML = test_name;
 				document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
