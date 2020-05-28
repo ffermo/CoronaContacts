@@ -158,7 +158,7 @@ function searchContact()
 	var colorList = "testing ";
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
-	
+	var litString = "lit";
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -177,7 +177,7 @@ function searchContact()
 					colorList += jsonObject.results.name[i];
 					if( i < jsonObject.results.length - 1 )
 					{	
-						
+						litString;
 						colorList += "<br />\r\n";
 					}
 				}
