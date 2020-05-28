@@ -19,15 +19,22 @@
 </head>
 <body>
 
-<input id="info" type="button" value="Customer Info">
-<div id="myDiv">
-    <form>Name:
-        <input type="text" value="" id="name" name="name">
-        </input>
-    </form>
-</div>
+<?php require_once 'SearchContact.php'; ?>
+
+<?php 
+  $mysqli = new mysqli("localhost", "faizar", "", "coronacontacts");
+  $result = $mysqli->query("SELECT * FROM Contacts");
+  pre_r($result);
+
+  function pre_r( $array ) {
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+  }
+
+?>
+
 
 </body>
-<script type="text/javascript" src="js/md5.js"></script> 
 
 </html>
