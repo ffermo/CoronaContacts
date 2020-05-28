@@ -162,6 +162,7 @@ function searchContact()
 	var zip = "";
 	var phoneNumber = "";
 	var infected = "";
+	var other =""
 
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -192,6 +193,7 @@ function searchContact()
 					zip += jsonObject.results[i].zip;
 					phoneNumber += jsonObject.results[i].phoneNumber;
 					infected += jsonObject.results[i].infected;
+					other += other;
 					
 					if( i < jsonObject.results.length - 1 )
 					{	
@@ -202,6 +204,7 @@ function searchContact()
 						zip += "<br />\r\n";
 						phoneNumber += "<br />\r\n";
 						infected += "<br />\r\n";
+						
 						// do the same thing with all the field
 					}
 				}
@@ -213,6 +216,7 @@ function searchContact()
 				document.getElementById("zipField").innerHTML = zip;
 				document.getElementById("phoneNumberField").innerHTML = phoneNumber;
 				document.getElementById("infectedField").innerHTML = infected;
+				document.getElementById("other").innerHTML = other;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
