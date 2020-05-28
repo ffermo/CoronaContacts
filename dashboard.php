@@ -37,15 +37,15 @@ $array = array(1, 2, 3, 4);
 </tbody>
 </table>
   </p>
-  <?php echo "<script type='text/javascript' src='js/code.js'></script>"; ?>
-  <input id="info" type="button" value="Customer Info">
-<div id="myDiv">
+  <?php echo "<script type='text/javascript' src='js/code.js'></script>"; 
+  echo "<input id='info' type='button' value='Customer Info'>
+<div id='myDiv'>
     <form>Name:
-        <input type="text" value="" id="name" name="name">
+        <input type='text' value='' id='name' name='name'>
         </input>
     </form>
-</div>
-
+</div>"
+?>
   
 </body>
 </html>
