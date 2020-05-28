@@ -155,10 +155,10 @@ function searchContact()
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
 
-	var colorList = "testing ";
+	var colorList = "testing";
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
-	var litString = "lit";
+	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -172,12 +172,11 @@ function searchContact()
 				var jsonObject = JSON.parse( xhr.responseText );
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
-				{	
-					
-					colorList += jsonObject.results.name[i];
+				{
+					colorList += jsonObject.results.[i];
 					if( i < jsonObject.results.length - 1 )
 					{	
-						litString;
+						
 						colorList += "<br />\r\n";
 					}
 				}
