@@ -173,7 +173,7 @@ function searchContact()
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
-					colorList += jsonObject.results.[i];
+					colorList += jsonObject.results[i];
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
