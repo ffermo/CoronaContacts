@@ -124,7 +124,7 @@ function searchContact()
 	var colorList = "";
 	
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
-	var url = urlBase + '/SearchColors.' + extension;
+	var url = urlBase + '/SearchContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -135,7 +135,7 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
+				document.getElementById("searchResults").innerHTML = "Color(s) has been retrieved";
 				var jsonObject = JSON.parse( xhr.responseText );
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
