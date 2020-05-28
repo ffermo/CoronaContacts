@@ -199,8 +199,14 @@ function searchContact()
 						// do the same thing with all the field
 					}
 				}
-				document.getElementById("print_sector").innerHTML = name;
+				// document.getElementById("print_sector").innerHTML = name;
 				document.getElementById("nameField").innerHTML = name;
+				document.getElementById("emailField").innerHTML = email;
+				document.getElementById("cityField").innerHTML = city;
+				document.getElementById("stateField").innerHTML = state;
+				document.getElementById("zipField").innerHTML = zip;
+				document.getElementById("phoneNumberField").innerHTML = phoneNumber;
+				document.getElementById("infectedField").innerHTML = infected;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
