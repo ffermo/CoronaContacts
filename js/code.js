@@ -212,7 +212,6 @@ function searchContact()
 						phoneNumber += "<br />\r\n";
 						infected += "<br />\r\n";
 						btn += "<br />\r\n";
-						// btn;
 					
 						
 						// do the same thing with all the field
@@ -226,7 +225,7 @@ function searchContact()
 				document.getElementById("zipField").innerHTML = zip;
 				document.getElementById("phoneNumberField").innerHTML = phoneNumber;
 				document.getElementById("infectedField").innerHTML = infected;
-				document.getElementById("btnId").innerHTML = btn;
+				document.getElementById("btnId").innerHTML = btn.type;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
