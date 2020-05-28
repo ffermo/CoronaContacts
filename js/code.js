@@ -163,3 +163,26 @@ function saveCookie()
 	    date.setTime(date.getTime()+(minutes*60*1000));
 	    document.cookie = "first=" + firstName + ",last=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
+
+var button = document.getElementById("info");
+var myDiv = document.getElementById("myDiv");
+
+function show() {
+    myDiv.style.visibility = "visible";
+}
+
+function hide() {
+    myDiv.style.visibility = "hidden";
+}
+
+function toggle() {
+    if (myDiv.style.visibility === "hidden") {
+        show();
+    } else {
+        hide();
+    }
+}
+
+hide();
+
+button.addEventListener("click", toggle, false);

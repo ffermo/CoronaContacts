@@ -12,15 +12,15 @@
         <hr class="my-4">
         <p>Choose any of the options below to manipulate your data... (Pending Update)</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg"  href="#" role="button">Search</a>
-          <a class="btn btn-info btn-lg"  href="#" role="button">Add</a>
+          <a class="btn btn-primary btn-lg" id="search" href="#" role="button">Search Contact</a>
+          <a class="btn btn-info btn-lg" id="create" href="#" role="button">Create Contact</a>
         </p>
       </div>
 </head>
 <body>
   <p>
 
-    <?php
+<?php
 $array = array(1, 2, 3, 4);
 ?>
 <?php 'include APICode/Login.php'; 
@@ -29,12 +29,23 @@ $array = array(1, 2, 3, 4);
 <table>
 <thead><tr><th>Number</th></tr></thead>
 <tbody>
+
 <?php foreach ($array as $num) : ?>
 <tr><td><?= htmlspecialchars($num) ?></td></tr>
 <?php endforeach ?>
+
 </tbody>
 </table>
   </p>
 
+  <input id="info" type="button" value="Customer Info">
+<div id="myDiv">
+    <form>Name:
+        <input type="text" value="" id="name" name="name">
+        </input>
+    </form>
+</div>
+
+  
 </body>
 </html>
