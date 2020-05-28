@@ -154,8 +154,16 @@ function searchContact()
 	alert("Search Utilitzed");
 	var srch = document.getElementById("searchText").value;
 	document.getElementById("searchResults").innerHTML = "";
+	var colorList = "";
+	var name = "";
+	var email = "";
+	var city = "";
+	var state = "";
+	var zip = "";
+	var phoneNumber = "";
+	var infected = "";
 
-	var colorList = "testing";
+
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
 	var url = urlBase + '/SearchContact.' + extension;
 	
@@ -173,15 +181,15 @@ function searchContact()
 				
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
-					colorList += jsonObject.results[i].name;
+					name += jsonObject.results[i].name;
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
-						colorList += "<br />\r\n";
+						name += "<br />\r\n";
 					}
 				}
 				
-				document.getElementsByTagName("p")[0].innerHTML = colorList;
+				document.getElementsByTagName("p")[0].innerHTML = name;
 			}
 		};
 		xhr.send(jsonPayload);
