@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css" />
-    <script type="text/javascript" src="js/code.js"></script>
+    <?php echo "<script type='text/javascript' src='js/code.js'></script>"; ?>
     <title>Dashboard</title>
     <div class="jumbotron">
         <h1 class="display-4">Hello, UserName!</h1>
@@ -38,7 +38,7 @@ $array = array(1, 2, 3, 4);
 </tbody>
 </table>
   </p>
-
+ 
   <input id="info" type="button" value="Customer Info">
 <div id="myDiv">
     <form>Name:
