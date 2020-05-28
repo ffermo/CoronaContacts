@@ -193,9 +193,7 @@ function searchContact()
 						name += "<br />\r\n";
 					}
 				}
-				document.getElementById("name").innerHTML = name;
-				document.getElementById("infected").innerHTML = infected;
-
+				document.getElementById("print_sector").innerHTML = name;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
