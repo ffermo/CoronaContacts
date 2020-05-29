@@ -227,7 +227,7 @@ function searchContact()
 					cell5.innerHTML = zip;
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
-					cell8.innerHTML = "<button>Button is here.</button>"
+					cell8.innerHTML = '<button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-dark">Dark</button>';
 					// cell8.innerHTML = contactId;
 					
 					
