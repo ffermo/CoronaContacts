@@ -199,6 +199,8 @@ function searchContact()
 					// phoneNumber += jsonObject.results[i].phoneNumber;
 					// infected += jsonObject.results[i].infected;
 					// btn += btn;
+					var btn = document.createElement('input');
+					btn.type = "button";
 					
 					name = jsonObject.results[i].name;
 					email = jsonObject.results[i].email;
@@ -227,6 +229,8 @@ function searchContact()
 					cell5.innerHTML = zip;
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
+					// cell8.document.createElement("button");
+					cell8 = btn;
 					// cell8.innerHTML = contactId;
 					
 					
