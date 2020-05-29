@@ -162,6 +162,7 @@ function searchContact()
 	var zip = "";
 	var phoneNumber = "";
 	var infected = "";
+	var contactId = "";
 	var btn = document.createElement("button");
 
 	// Variables for Table
@@ -206,6 +207,7 @@ function searchContact()
 					zip = jsonObject.results[i].zip;
 					phoneNumber = jsonObject.results[i].phoneNumber;
 					infected = jsonObject.results[i].infected;
+					contactId = jsonObject.results[i].userId;
 
 					var row = table.insertRow(-1);
 					
@@ -216,6 +218,7 @@ function searchContact()
 					var cell5 = row.insertCell(4);
 					var cell6 = row.insertCell(5);
 					var cell7 = row.insertCell(6);
+					var cell8 = row.insertCell(7);
 					
 					cell1.innerHTML = name;
 					cell2.innerHTML = email;
@@ -224,6 +227,7 @@ function searchContact()
 					cell5.innerHTML = zip;
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
+					cell8.innerHTML = contactId;
 					
 					
 					if( i < jsonObject.results.length - 1 )
