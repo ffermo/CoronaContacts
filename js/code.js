@@ -190,15 +190,22 @@ function searchContact()
 				{
 					// Needs to convert to 
 				
-					name += jsonObject.results[i].name;
-					email += jsonObject.results[i].email;
-					city += jsonObject.results[i].city;
-					state += jsonObject.results[i].state;
-					zip += jsonObject.results[i].zip;
-					phoneNumber += jsonObject.results[i].phoneNumber;
-					infected += jsonObject.results[i].infected;
-					btn += btn;
-					btn.type = "button";
+					// name += jsonObject.results[i].name;
+					// email += jsonObject.results[i].email;
+					// city += jsonObject.results[i].city;
+					// state += jsonObject.results[i].state;
+					// zip += jsonObject.results[i].zip;
+					// phoneNumber += jsonObject.results[i].phoneNumber;
+					// infected += jsonObject.results[i].infected;
+					// btn += btn;
+					
+					name = jsonObject.results[i].name;
+					email = jsonObject.results[i].email;
+					city = jsonObject.results[i].city;
+					state = jsonObject.results[i].state;
+					zip = jsonObject.results[i].zip;
+					phoneNumber = jsonObject.results[i].phoneNumber;
+					infected = jsonObject.results[i].infected;
 
 					var row = table.insertRow(-1);
 					
