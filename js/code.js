@@ -218,18 +218,17 @@ function searchContact()
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
 					
-					var cell1 = row.insertCell(0)					
 					
 					if( i < jsonObject.results.length - 1 )
 					{	
-						// name += "<br />\r\n";
-						// email += "<br />\r\n";
-						// city += "<br />\r\n";
-						// state += "<br />\r\n";
-						// zip += "<br />\r\n";
-						// phoneNumber += "<br />\r\n";
-						// infected += "<br />\r\n";
-						// btn += "<br />\r\n";
+						name += "<br />\r\n";
+						email += "<br />\r\n";
+						city += "<br />\r\n";
+						state += "<br />\r\n";
+						zip += "<br />\r\n";
+						phoneNumber += "<br />\r\n";
+						infected += "<br />\r\n";
+						btn += "<br />\r\n";
 					
 						
 						// do the same thing with all the field
