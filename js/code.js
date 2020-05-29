@@ -227,7 +227,7 @@ function searchContact()
 					cell5.innerHTML = zip;
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
-					cell8.innerHTML = contactId;
+					// cell8.innerHTML = contactId;
 					
 					
 					if( i < jsonObject.results.length - 1 )
