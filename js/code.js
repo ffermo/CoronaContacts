@@ -207,7 +207,7 @@ function searchContact()
 					zip = jsonObject.results[i].zip;
 					phoneNumber = jsonObject.results[i].phoneNumber;
 					infected = jsonObject.results[i].infected;
-					contactId = jsonObject.results[i].userId;
+					contactId = jsonObject.results[i].contactId;
 
 					var row = table.insertRow(-1);
 					
