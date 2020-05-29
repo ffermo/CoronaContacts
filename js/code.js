@@ -163,7 +163,7 @@ function searchContact()
 	var phoneNumber = "";
 	var infected = "";
 	var contactId = "";
-	var btn = document.createElement("button");
+	// var btn = document.createElement("button");
 
 	// Variables for Table
 	
@@ -227,7 +227,6 @@ function searchContact()
 					cell5.innerHTML = zip;
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
-					cell8.document.createElement("button");
 					// cell8.innerHTML = contactId;
 					
 					
