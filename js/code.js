@@ -8,6 +8,17 @@ var lastName = "";
 var email = "";
 var password ="";
 
+function displayName()                                                              
+{                                                                                   
+	    document.getElementById("userFirstName").innerHTML = "Hello " + firstName + "!";
+}                                                                                   
+
+function refreshList()
+{
+	document.getElementById("contactTable").innerHTML = "";
+}
+
+
 function doLogin()
 {
 	userId = 0;
@@ -151,7 +162,7 @@ function readCookie()
 function searchContact()
 {
 	var srch = document.getElementById("searchText").value;
-	document.getElementById("searchResults").innerHTML = "";
+	//document.getElementById("searchResults").innerHTML = "";
 
 	// Json DB elements
 	var table = document.getElementById("contactTable");
@@ -182,11 +193,17 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{	
-				// Text displays to inform client the search results are displayed. 
-				document.getElementById("searchResults").innerHTML = "Resulting Search Displayed";
 				var jsonObject = JSON.parse( xhr.responseText );
-				
-				
+
+				// Text displays to inform client the search results are displayed. 
+				if (jsonObject.results.length == 0)
+					document.getElementById("searchResults").innerHTML = "No contacts found!";
+				else if (jsonObject.results.length == 1)
+					document.getElementById("searchResults").innerHTML = "1 contact found!";
+				else if (jsonObject.results.length > 1)
+					document.getElementById("searchResults").innerHTML = jsonObject.results.length + " contacts found!";
+
+
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{
 					// Needs to convert to 
@@ -227,7 +244,7 @@ function searchContact()
 					cell5.innerHTML = zip;
 					cell6.innerHTML = phoneNumber;
 					cell7.innerHTML = infected;
-					cell8.innerHTML = '<button type="button" class="btn btn-primary">Primary</button><button type="button" class="btn btn-dark">Dark</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary">Edit</button><button type="button" class="btn btn-dark">Delete</button>';
 					// cell8.innerHTML = contactId;
 					
 					
