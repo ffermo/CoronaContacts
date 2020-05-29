@@ -200,32 +200,51 @@ function searchContact()
 					infected += jsonObject.results[i].infected;
 					btn += btn;
 					btn.type = "button";
+
+					var row = table.insertRow(-1);
 					
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					var cell4 = row.insertCell(3);
+					var cell5 = row.insertCell(4);
+					var cell6 = row.insertCell(5);
+					var cell7 = row.insertCell(6);
+					
+					cell1.innerHTML = name;
+					cell2.innerHTML = email;
+					cell3.innerHTML = city;
+					cell4.innerHTML = state;
+					cell5.innerHTML = zip;
+					cell6.innerHTML = phoneNumber;
+					cell7.innerHTML = infected;
+					
+					var cell1 = row.insertCell(0)					
 					
 					if( i < jsonObject.results.length - 1 )
 					{	
-						name += "<br />\r\n";
-						email += "<br />\r\n";
-						city += "<br />\r\n";
-						state += "<br />\r\n";
-						zip += "<br />\r\n";
-						phoneNumber += "<br />\r\n";
-						infected += "<br />\r\n";
-						btn += "<br />\r\n";
+						// name += "<br />\r\n";
+						// email += "<br />\r\n";
+						// city += "<br />\r\n";
+						// state += "<br />\r\n";
+						// zip += "<br />\r\n";
+						// phoneNumber += "<br />\r\n";
+						// infected += "<br />\r\n";
+						// btn += "<br />\r\n";
 					
 						
 						// do the same thing with all the field
 					}
 				}
 				// document.getElementById("print_sector").innerHTML = name;
-				document.getElementById("nameField").innerHTML = name;
-				document.getElementById("emailField").innerHTML = email;
-				document.getElementById("cityField").innerHTML = city;
-				document.getElementById("stateField").innerHTML = state;
-				document.getElementById("zipField").innerHTML = zip;
-				document.getElementById("phoneNumberField").innerHTML = phoneNumber;
-				document.getElementById("infectedField").innerHTML = infected;
-				document.getElementById("btnId").innerHTML = btn.type;
+				// document.getElementById("nameField").innerHTML = name;
+				// document.getElementById("emailField").innerHTML = email;
+				// document.getElementById("cityField").innerHTML = city;
+				// document.getElementById("stateField").innerHTML = state;
+				// document.getElementById("zipField").innerHTML = zip;
+				// document.getElementById("phoneNumberField").innerHTML = phoneNumber;
+				// document.getElementById("infectedField").innerHTML = infected;
+				// document.getElementById("btnId").innerHTML = btn.type;
 				// document.getElementsByTagName("p")[i].innerHTML = test_name;
 
 			}
