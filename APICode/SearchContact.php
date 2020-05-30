@@ -52,9 +52,13 @@
 
 				$searchCount++;
 
+				$date = new DateTime($row["ContactCreated"] ." UTC");
+				$date->setTimezone(new DateTimeZone('America/New_York'));
+				$formattedDate = date_format($date, 'm-d-Y H:i:s');
+
 				$searchResults .= '{
 				"id":"' . $row["ID"] . '",
-				"contactcreated":"' . $row["ContactCreated"] . '",
+				"contactcreated":"' . $formattedDate . '",
 				"name":"' . $row["Name"] . '",
 				"email":"' . $row["Email"] . '",
 				"city":"' . $row["City"] . '",
