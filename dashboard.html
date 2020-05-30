@@ -9,7 +9,7 @@
     <title>CoronaContacts Dashboard</title>
 </head>
 
-<body onload="readCookie(); displayName();">
+<body onload="readCookie(); displayName(); searchContact();">
   <div class="jumbotron">
         <h1 id="userFirstName" class="display-4">Hello!</h1>
         <span class="lead">Here at CoronaContacts, you can keep track of anyone to avoid during the pandemic.</span>
@@ -23,8 +23,7 @@
   <div class="row">
   <div class="card col-sm-3" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Search Users</h5>
-      <span id="searchResults">Please add Contacts</span>
+      <h5 class="card-title">Search Contacts</h5>
       <div class="form-group">
         <input
           type="text"
@@ -35,8 +34,9 @@
       </div>
       <span id="print_sector"></span>
       <p id="mudit">
-      </p><br /><br />
-      <a class="btn btn-primary" onclick="searchContact();">Search Contacts</a>
+      <span id="searchResults"></span>
+      </p>
+      <a class="btn btn-primary" onclick="refreshList(); searchContact();">Search</a>
     </div>
   </div>
 
