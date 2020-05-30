@@ -134,8 +134,9 @@ function addContact()
 	// document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "'+ city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '"}';
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '"}';
 	var url = urlBase + '/CreateContact.' + extension;
+	document.getElementById("printHere") = jsonPayload;
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
@@ -153,7 +154,7 @@ function addContact()
 	//  	return;
 	// }
 
-	document.getElementById("printHere") = jsonPayload;
+	// document.getElementById("printHere") = jsonPayload;
 	// firstName = jsonObject.firstName;
 	// lastName = jsonObject.lastName;
 
