@@ -134,8 +134,7 @@ function addContact()
 	// document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '"}';
-	document.getElementById("printHere").innerHTML = jsonPayload;
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "userId" : "' + userId + '"}';
 
 	var url = urlBase + '/CreateContact.' + extension;
 	
@@ -162,9 +161,9 @@ function addContact()
 
 	// 	saveCookie();
 
-		alert("New Contact Added");
 
 	// window.location.href = "dashboard.html";
+	document.getElementById("printHere").innerHTML = "Added!";
 		
 	}
 	catch(err)

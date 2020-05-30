@@ -55,18 +55,6 @@
           <th>ACTION</th>
         </tr>
       </thead>
-        <!-- <tr>
-          <td id="nameField"></td>
-          <td id="emailField"></td>
-          <td id="cityField"></td>
-          <td id="stateField"></td>
-          <td id="zipField"></td>
-          <td id="phoneNumberField"></td>
-          <td id="infectedField"></td>
-          <td colspan="2" id="btnId">
-            
-          </td>
-        </tr> -->
     </table>
   </div>
 </div>
@@ -75,7 +63,6 @@
   <div class="card col-sm-3" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Add Users</h5>
-      <span id="printHere">Display Here</span>
       <div class="form-group">
         <input
                 type="name"
@@ -139,9 +126,10 @@
                 required
               />
             </div>
+		  <span id="printHere"></span>
       </div>
       <p>
-        <a class="btn btn-primary" onclick="addContact();">Add Contacts</a>
+        <a class="btn btn-primary" onclick="addContact(); refreshList(); searchContact();">Add Contacts</a>
       </p>
     </div>
   </div>
