@@ -86,7 +86,7 @@
 				"zip":"' . $row["zip"] . '",
 				"phoneNumber":"' . $row["Phone"] . '",
 				"infected":"' . $row["Infected"] . '",
-				"contactId":"'. $row["ID"].'"
+				"userID":"'. $row["UserID"].'"
 				}' ;
 				
 				// Note for Reference: return all value and we do not have to show them all.
