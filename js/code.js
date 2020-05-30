@@ -130,14 +130,14 @@ function addContact()
 	var zip = document.getElementById("zip").value;
     var phoneNumber = document.getElementById("phoneNumber").value;
     var infected = document.getElementById("infected").value;
-    var contactId = userId;
+    // var contactId = userId;
 	//var hash = md5(password);
 
 	// document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "'+ city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "contactId" : "' + userId + '"}';
-	document.getElementById("printHere").innerHTML = jsonPayload;
+	document.getElementById("printHere").innerHTML = "jsonPayload";
 	var url = urlBase + '/CreateContact.' + extension;
 
 	// var xhr = new XMLHttpRequest();
