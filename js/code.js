@@ -138,39 +138,39 @@ function addContact()
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "'+ city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "contactId" : "' + userId + '"}';
 	document.getElementById("printHere").innerHTML = jsonPayload;
-	var url = urlBase + '/Register.' + extension;
+	var url = urlBase + '/CreateContact.' + extension;
 
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// var xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, false);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	try
-	{
-		xhr.send(jsonPayload);
-		var jsonObject = JSON.parse( xhr.responseText );
-		userId = jsonObject.id;
+	// try
+	// {
+	// 	xhr.send(jsonPayload);
+	// 	var jsonObject = JSON.parse( xhr.responseText );
+	// 	userId = jsonObject.id;
 
-		if( userId < 1  )
-		{
-			        document.getElementById("regResult").innerHTML = "E-mail already exists!";
-			        return;
-		}
+	// 	if( userId < 1  )
+	// 	{
+	// 		        document.getElementById("regResult").innerHTML = "E-mail already exists!";
+	// 		        return;
+	// 	}
 
-		document.getElementById("regResult").innerHTML = "In Database";
-		firstName = jsonObject.firstName;
-		lastName = jsonObject.lastName;
+	// 	document.getElementById("regResult").innerHTML = "In Database";
+	// 	firstName = jsonObject.firstName;
+	// 	lastName = jsonObject.lastName;
 
-		saveCookie();
+	// 	saveCookie();
 
-		alert("Successfully Registered");
+	// 	alert("Successfully Registered");
 
-		window.location.href = "dashboard.html";
+	// 	window.location.href = "dashboard.html";
 		
-	}
-	catch(err)
-	{
-		document.getElementById("regResult").innerHTML = err.message;
-	}
+	// }
+	// catch(err)
+	// {
+	// 	document.getElementById("regResult").innerHTML = err.message;
+	// }
 }
 
 	
