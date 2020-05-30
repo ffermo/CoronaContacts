@@ -118,6 +118,61 @@ function doRegister()
 	}
 }
 
+function addContact()
+{
+	userId = 0;
+
+
+	var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var zip = document.getElementById("zip").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var infected = document.getElementById("infected").value;
+    var contactId = userId;
+	//var hash = md5(password);
+
+	// document.getElementById("regResult").innerHTML = "";
+
+	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "'+ city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "contactId" : "' + userId + '"}';
+	document.getElementById("printHere").innerHTML = jsonPayload;
+	var url = urlBase + '/Register.' + extension;
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.send(jsonPayload);
+		var jsonObject = JSON.parse( xhr.responseText );
+		userId = jsonObject.id;
+
+		if( userId < 1  )
+		{
+			        document.getElementById("regResult").innerHTML = "E-mail already exists!";
+			        return;
+		}
+
+		document.getElementById("regResult").innerHTML = "In Database";
+		firstName = jsonObject.firstName;
+		lastName = jsonObject.lastName;
+
+		saveCookie();
+
+		alert("Successfully Registered");
+
+		window.location.href = "dashboard.html";
+		
+	}
+	catch(err)
+	{
+		document.getElementById("regResult").innerHTML = err.message;
+	}
+}
+
 	
 function saveCookie()
 {
