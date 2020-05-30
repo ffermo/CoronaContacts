@@ -26,12 +26,32 @@
 	else
 	{
 		// using sql to store the data fields into the database.
-		$sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
-		
-		// ???
+		$sql = "INSERT INTO Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
+
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
+		}
+
+		else
+		{
+			$sql = "SELECT * FROM Contacts WHERE Name='$name' AND Email='$email' AND City='$city' AND State='$state' AND Zip='$zip' AND Phone='$phone' AND Infected='$infected' AND UserId='$userId'";
+
+			$result = $conn->query($sql);
+
+			if ($result->num_rows > 0)
+			{
+				$row = $result->fetch_assoc();
+				$contactId = $row["ID"];
+			}
+
+			else
+			{
+				$contactId = -1;
+			}
+
+			returnWithInfo($contactId);
+
 		}
 		
 		// closing the connection with the localhost
@@ -39,7 +59,6 @@
 	}
 	
 	// basically depicts that our API works
-	returnWithError("CONTACT CREATED!");
 	
 	// function to get info from the user
 	function getRequestInfo()
@@ -58,6 +77,12 @@
 	{
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
+	}
+
+	function returnWithInfo($contactId)
+	{
+		$retValue = '{"contactId":' . $contactId .'}';
+		sendResultInfoAsJson($retValue);
 	}
 	
 ?>

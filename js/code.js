@@ -118,6 +118,61 @@ function doRegister()
 	}
 }
 
+function addContact()
+{
+
+	var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var zip = document.getElementById("zip").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var infected = document.getElementById("infected").value;
+    // var contactId = userId;
+	//var hash = md5(password);
+
+	// document.getElementById("regResult").innerHTML = "";
+
+	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "userId" : "' + userId + '"}';
+
+	var url = urlBase + '/CreateContact.' + extension;
+	
+
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+	xhr.send(jsonPayload);
+	var jsonObject = JSON.parse( xhr.responseText );
+	// userId = jsonObject.id;
+
+	// if( userId < 1  )
+	// {
+	//  	document.getElementById("regResult").innerHTML = "E-mail already exists!";
+	//  	return;
+	// }
+
+	// document.getElementById("printHere") = jsonPayload;
+	// firstName = jsonObject.firstName;
+	// lastName = jsonObject.lastName;
+
+	// 	saveCookie();
+
+
+	// window.location.href = "dashboard.html";
+	document.getElementById("printHere").innerHTML = "Added!";
+		
+	}
+	catch(err)
+	{	
+		alert("Error" + err.message);
+	 	// document.getElementById("regResult").innerHTML = err.message;
+	}
+}
+
 	
 function saveCookie()
 {
