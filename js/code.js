@@ -137,40 +137,40 @@ function addContact()
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "'+ city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "contactId" : "' + userId + '"}';
-	document.getElementById("printHere").innerHTML = jsonPayload;
 	var url = urlBase + '/CreateContact.' + extension;
 
-	// var xhr = new XMLHttpRequest();
-	// xhr.open("POST", url, false);
-	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	// try
+	try
+	{
+	xhr.send(jsonPayload);
+	var jsonObject = JSON.parse( xhr.responseText );
+	userId = jsonObject.id;
+
+	// if( userId < 1  )
 	// {
-	// 	xhr.send(jsonPayload);
-	// 	var jsonObject = JSON.parse( xhr.responseText );
-	// 	userId = jsonObject.id;
+	//  	document.getElementById("regResult").innerHTML = "E-mail already exists!";
+	//  	return;
+	// }
 
-	// 	if( userId < 1  )
-	// 	{
-	// 		        document.getElementById("regResult").innerHTML = "E-mail already exists!";
-	// 		        return;
-	// 	}
-
-	// 	document.getElementById("regResult").innerHTML = "In Database";
-	// 	firstName = jsonObject.firstName;
-	// 	lastName = jsonObject.lastName;
+	// document.getElementById("regResult").innerHTML = "In Database";
+	// firstName = jsonObject.firstName;
+	// lastName = jsonObject.lastName;
 
 	// 	saveCookie();
 
-	// 	alert("Successfully Registered");
+		alert("New Contact Added");
 
-	// 	window.location.href = "dashboard.html";
+	// window.location.href = "dashboard.html";
 		
-	// }
-	// catch(err)
-	// {
-	// 	document.getElementById("regResult").innerHTML = err.message;
-	// }
+	}
+	catch(err)
+	{	
+		alert("Error" + err.message);
+	 	// document.getElementById("regResult").innerHTML = err.message;
+	}
 }
 
 	
