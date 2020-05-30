@@ -137,7 +137,7 @@ function addContact()
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "'+ city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "contactId" : "' + userId + '"}';
-	document.getElementById("printHere").innerHTML = "jsonPayload";
+	document.getElementById("printHere").innerHTML = jsonPayload;
 	var url = urlBase + '/CreateContact.' + extension;
 
 	// var xhr = new XMLHttpRequest();
