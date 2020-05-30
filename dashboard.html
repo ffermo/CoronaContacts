@@ -33,12 +33,53 @@
           placeholder="Search"
         />
       </div>
-      <span id="print_sector"></span>
-      <p id="mudit">
-      </p><br /><br />
-      <a class="btn btn-primary" onclick="searchContact();">Search Contacts</a>
+      <a class="btn btn-primary" onclick="searchContact();">Add Contacts</a>
     </div>
   </div>
+  <div class="row">
+    <div class="card col-sm-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Add Users</h5>
+        <span id="searchResults">Please add Contacts</span>
+        <div class="form-group">
+          <input
+                  type="name"
+                  id="firstName"
+                  class="form-control"
+                  placeholder="Enter First Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input
+                  type="name"
+                  id="lastName"
+                  class="form-control"
+                  placeholder="Enter Last Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Enter Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control"
+                  placeholder="Create Password"
+                />
+              </div>
+        </div>
+        <a class="btn btn-primary" onclick="searchContact();">Search Contacts</a>
+      </div>
+    </div>
 
   <div class="row justify-content-center col-sm-9">
     <table class="table" id="contactTable">
