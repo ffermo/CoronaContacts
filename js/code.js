@@ -136,7 +136,7 @@ function addContact()
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '"}';
 	var url = urlBase + '/CreateContact.' + extension;
-	document.getElementById("printHere") = jsonPayload;
+	
 
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
@@ -146,8 +146,9 @@ function addContact()
 	{
 	xhr.send(jsonPayload);
 	var jsonObject = JSON.parse( xhr.responseText );
-	userId = jsonObject.id;
+	// userId = jsonObject.id;
 
+	document.getElementById("printHere").innerHTML = jsonPayload;
 	// if( userId < 1  )
 	// {
 	//  	document.getElementById("regResult").innerHTML = "E-mail already exists!";
