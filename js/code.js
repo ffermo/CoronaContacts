@@ -163,7 +163,8 @@ function addContact()
 
 
 	document.getElementById("printHere").innerHTML = "Added!";
-		window.location.href = "dashboard.html";
+	alert("Contact Added!");
+	window.location.href = "dashboard.html";
 
 		
 	}
