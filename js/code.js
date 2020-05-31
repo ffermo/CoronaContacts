@@ -299,6 +299,24 @@ function deleteContact( contactId )
 
 function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
 {
+	if(name == null)
+		name = '';
+	else if(email == null)
+		email = '';
+	else if(city == null)
+		city = '';
+	else if(state == null)
+		state = '';
+	else if(zip == null)
+		zip = '';
+	else if(phoneNumber == null)
+		phoneNumber = '';
+	else if(infected == null)
+		infected = '';
+	else if(contactId == null)
+		contactId = '';
+
+
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	alert(jsonPayload);
 	// var url = urlBase + '/UpdateContact.' + extension;
