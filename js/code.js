@@ -309,20 +309,20 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 	// xhr.open("POST", url, false);
 	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	try
-	{
+	// try
+	// {
 
-	// 	xhr.send(jsonPayload);
+	// // 	xhr.send(jsonPayload);
 
-	// 	alert("Contact Updated!");
-	// 	window.location.href = "dashboard.html";
+	// // 	alert("Contact Updated!");
+	// // 	window.location.href = "dashboard.html";
 
 		
-	}
-	catch(err)
-	{	
-	// 	alert("Error: " + err.message);
-	}
+	// }
+	// catch(err)
+	// {	
+	// // 	alert("Error: " + err.message);
+	// }
 }
 
 function saveCookie()
