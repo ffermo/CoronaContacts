@@ -218,6 +218,7 @@ function searchContact()
 
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
+					alert(jsonObject.results[i]);
 					// Parsing JSON objects
 					name = jsonObject.results[i].name;
 					email = jsonObject.results[i].email;
