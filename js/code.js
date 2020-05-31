@@ -300,29 +300,28 @@ function deleteContact( contactId )
 
 function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
 {
-	alert("Edit Contact!");
-
-
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
-	var url = urlBase + '/UpdateContact.' + extension;
-	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
-	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
+	// var url = urlBase + '/UpdateContact.' + extension;
+	// document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	// document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
+	// var xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, false);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 	try
 	{
-		xhr.send(jsonPayload);
+		alert("Edit Contact!");
 
-		alert("Contact Updated!");
-		window.location.href = "dashboard.html";
+	// 	xhr.send(jsonPayload);
+
+	// 	alert("Contact Updated!");
+	// 	window.location.href = "dashboard.html";
 
 		
 	}
 	catch(err)
-	{	
-		alert("Error: " + err.message);
+	// {	
+	// 	alert("Error: " + err.message);
 	}
 }
 
