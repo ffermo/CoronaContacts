@@ -302,7 +302,7 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 {
 
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
-	var url = urlBase + '/DeleteContact.' + extension;
+	var url = urlBase + '/UpdateContact.' + extension;
 	
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
