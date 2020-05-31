@@ -280,7 +280,7 @@ function deleteContact( contactId )
 	// document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"userId" : "' + userId + '", "contactId" : "' + contactId + '"}';
+	var jsonPayload = '{"id" : "' + contactId + '", "userID" : "' + userId + '"}';
 	alert(jsonPayload);
 	var url = urlBase + '/DeleteContact.' + extension;
 	
@@ -291,7 +291,7 @@ function deleteContact( contactId )
 	try
 	{
 		xhr.send(jsonPayload);
-		var jsonObject = JSON.parse( xhr.responseText );
+		// var jsonObject = JSON.parse( xhr.responseText );
 		// userId = jsonObject.id;
 
 		// if( userId < 1  )

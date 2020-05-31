@@ -18,7 +18,7 @@
 	else
 	{
 		// UserID included just to make sure you can't delete someone else's contacts
-		$sql = "DELETE FROM Contacts WHERE id = '" . $ID . "'" . "AND userID ='" . $userId . "'";
+		$sql = "DELETE FROM Contacts WHERE ID = '" . $ID . "'" . "AND UserID ='" . $userId . "'";
 		
 		if( $result = $conn->query($sql) != TRUE )
 		{
