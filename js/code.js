@@ -225,10 +225,10 @@ function searchContact()
 					state = jsonObject.results[i].state;
 					zip = jsonObject.results[i].zip;
 					phoneNumber = jsonObject.results[i].phoneNumber;
+					console.log("Phone " + phoneNumber);
 					datecontactcreated = jsonObject.results[i].datecontactcreated;
 					infected = jsonObject.results[i].infected;
 					contactId = jsonObject.results[i].id;
-					console.log("Line 231  " + contactId);
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
 					
