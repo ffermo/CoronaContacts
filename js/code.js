@@ -280,7 +280,7 @@ function deleteContact( contactId )
 	// document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"id" : "' + contactId + '", "userId" : "' + userId + '"}';
+	var jsonPayload = '{"ID" : "' + contactId + '", "userId" : "' + userId + '"}';
 	alert(jsonPayload);
 	var url = urlBase + '/DeleteContact.' + extension;
 	
@@ -300,7 +300,7 @@ function deleteContact( contactId )
 		//  	return;
 		// }
 
-		document.getElementById("printHere") = jsonPayload;
+		// document.getElementById("printHere") = jsonPayload;
 		// firstName = jsonObject.firstName;
 		// lastName = jsonObject.lastName;
 
