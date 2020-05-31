@@ -281,6 +281,7 @@ function deleteContact( contactId )
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"userId" : "' + userId + '", "contactId" : "' + contactId + '"}';
+	alert(jsonPayload);
 	var url = urlBase + '/DeleteContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
