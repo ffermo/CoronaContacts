@@ -300,10 +300,11 @@ function deleteContact( contactId )
 
 function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
 {
+	alert("Edit Contact!");
+
 
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	var url = urlBase + '/UpdateContact.' + extension;
-	alert("Edit Contact!");
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
 	var xhr = new XMLHttpRequest();
