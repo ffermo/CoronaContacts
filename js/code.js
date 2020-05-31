@@ -162,8 +162,9 @@ function addContact()
 	// 	saveCookie();
 
 
-	// window.location.href = "dashboard.html";
 	document.getElementById("printHere").innerHTML = "Added!";
+		window.location.href = "dashboard.html";
+
 		
 	}
 	catch(err)
