@@ -251,7 +251,9 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
+					//cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact()">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
+
 					// cell8.innerHTML = contactId;
 					
 					
@@ -297,28 +299,30 @@ function deleteContact( contactId )
 	}
 }
 
-function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
+// function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
+function editContact()
 {
-	if(name == null)
-		name = '';
-	else if(email == null)
-		email = '';
-	else if(city == null)
-		city = '';
-	else if(state == null)
-		state = '';
-	else if(zip == null)
-		zip = '';
-	else if(phoneNumber == null)
-		phoneNumber = '';
-	else if(infected == null)
-		infected = '';
-	else if(contactId == null)
-		contactId = '';
+	alert("Edit function Entered");
+	// if(name == null)
+	// 	name = '';
+	// else if(email == null)
+	// 	email = '';
+	// else if(city == null)
+	// 	city = '';
+	// else if(state == null)
+	// 	state = '';
+	// else if(zip == null)
+	// 	zip = '';
+	// else if(phoneNumber == null)
+	// 	phoneNumber = '';
+	// else if(infected == null)
+	// 	infected = '';
+	// else if(contactId == null)
+	// 	contactId = '';
 
 
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
-	alert(jsonPayload);
+	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
+	// alert(jsonPayload);
 	// var url = urlBase + '/UpdateContact.' + extension;
 	// document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 	// document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
