@@ -114,7 +114,6 @@ function doRegister()
 	}
 	catch(err)
 	{
-		document.getElementById("regResult").innerHTML = err.message;
 	}
 }
 
