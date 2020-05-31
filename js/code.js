@@ -230,7 +230,7 @@ function searchContact()
 	var zip = "";
 	var phoneNumber = "";
 	var infected = "";
-	var createdDate = "";
+	var datecontactcreated = "";
 	var contactId = "";
 	// var btn = document.createElement("button");
 
