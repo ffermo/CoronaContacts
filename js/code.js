@@ -320,7 +320,7 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 		
 	}
 	catch(err)
-	// {	
+	{	
 	// 	alert("Error: " + err.message);
 	}
 }
