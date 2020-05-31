@@ -227,8 +227,8 @@ function searchContact()
 					phoneNumber = jsonObject.results[i].phoneNumber;
 					datecontactcreated = jsonObject.results[i].datecontactcreated;
 					infected = jsonObject.results[i].infected;
-					contactId = jsonObject.results[i].contactId;
-					console.log("Line 231  " + name);
+					contactId = jsonObject.results[i].id;
+					console.log("Line 231  " + contactId);
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
 					
