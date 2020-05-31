@@ -283,7 +283,6 @@ function deleteContact( contactId )
 	var jsonPayload = '{"userId" : "' + userId + '", "contactId" : "' + contactId + '"}';
 	var url = urlBase + '/DeleteContact.' + extension;
 	
-
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -291,7 +290,7 @@ function deleteContact( contactId )
 	try
 	{
 		xhr.send(jsonPayload);
-		// var jsonObject = JSON.parse( xhr.responseText );
+		var jsonObject = JSON.parse( xhr.responseText );
 		// userId = jsonObject.id;
 
 		// if( userId < 1  )
@@ -300,7 +299,7 @@ function deleteContact( contactId )
 		//  	return;
 		// }
 
-		// document.getElementById("printHere") = jsonPayload;
+		document.getElementById("printHere") = jsonPayload;
 		// firstName = jsonObject.firstName;
 		// lastName = jsonObject.lastName;
 
