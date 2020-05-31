@@ -252,7 +252,7 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					cell8.innerHTML = ('<button type="button" class="btn btn-primary">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>');
+					cell8.innerHTML = ('<button type="button" class="btn btn-primary" onclick="editFunction('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>');
 					// cell8.innerHTML = contactId;
 					
 					
@@ -277,11 +277,7 @@ function searchContact()
 
 function deleteContact( contactId )
 {
-	// document.getElementById("regResult").innerHTML = "";
-
-	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"ID" : "' + contactId + '", "userId" : "' + userId + '"}';
-	alert(jsonPayload);
 	var url = urlBase + '/DeleteContact.' + extension;
 	
 	var xhr = new XMLHttpRequest();
@@ -291,22 +287,6 @@ function deleteContact( contactId )
 	try
 	{
 		xhr.send(jsonPayload);
-		// var jsonObject = JSON.parse( xhr.responseText );
-		// userId = jsonObject.id;
-
-		// if( userId < 1  )
-		// {
-		//  	document.getElementById("regResult").innerHTML = "E-mail already exists!";
-		//  	return;
-		// }
-
-		// document.getElementById("printHere") = jsonPayload;
-		// firstName = jsonObject.firstName;
-		// lastName = jsonObject.lastName;
-
-		// 	saveCookie();
-
-
 		alert("Contact Deleted!");
 		window.location.href = "dashboard.html";
 
@@ -314,7 +294,34 @@ function deleteContact( contactId )
 	}
 	catch(err)
 	{	
-		alert("Error" + err.message);
+		alert("Error: " + err.message);
+	}
+}
+
+function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
+{
+
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
+	var url = urlBase + '/DeleteContact.' + extension;
+	
+	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.send(jsonPayload);
+
+		alert("Contact Updated!");
+		window.location.href = "dashboard.html";
+
+		
+	}
+	catch(err)
+	{	
+		alert("Error: " + err.message);
 	}
 }
 
