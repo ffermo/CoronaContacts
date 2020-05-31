@@ -54,7 +54,7 @@
 
 				$searchResults .= '{
 				"id":"' . $row["ID"] . '",
-				"contactcreated":"' . $row["ContactCreated"] . '",
+				"datecontactcreated":"' . $row["DateContactCreated"] . '",
 				"name":"' . $row["Name"] . '",
 				"email":"' . $row["Email"] . '",
 				"city":"' . $row["City"] . '",
