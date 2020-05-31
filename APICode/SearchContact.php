@@ -52,9 +52,9 @@
 
 				$searchCount++;
 
-				$date = new DateTime($row["ContactCreated"] ." UTC");
+				$date = new DateTime($row["DateContactCreated"] ." UTC");
 				$date->setTimezone(new DateTimeZone('America/New_York'));
-				$formattedDate = date_format($date, 'm-d-Y H:i:s');
+				$formattedDate = date_format($date, 'g:ia m/d/Y');
 
 				$searchResults .= '{
 				"id":"' . $row["ID"] . '",
