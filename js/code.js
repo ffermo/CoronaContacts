@@ -280,7 +280,7 @@ function deleteContact( contactId )
 	// document.getElementById("regResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"id" : "' + contactId + '", "userID" : "' + userId + '"}';
+	var jsonPayload = '{"id" : "' + contactId + '", "userId" : "' + userId + '"}';
 	alert(jsonPayload);
 	var url = urlBase + '/DeleteContact.' + extension;
 	
