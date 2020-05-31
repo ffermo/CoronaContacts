@@ -54,7 +54,7 @@
 
 				$date = new DateTime($row["DateContactCreated"] ." UTC");
 				$date->setTimezone(new DateTimeZone('America/New_York'));
-				$formattedDate = date_format($date, 'g:ia m/d/Y');
+				$formattedDate = date_format($date, 'g:ia M dS Y');
 
 				$searchResults .= '{
 				"id":"' . $row["ID"] . '",
