@@ -235,6 +235,7 @@ function searchContact()
 					var datecontactcreated = jsonObject.results[i].datecontactcreated;
 					var infected = jsonObject.results[i].infected;
 					var contactId = jsonObject.results[i].id;
+					console.log("Line 238: " + name);
 
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
