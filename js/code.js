@@ -226,16 +226,15 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
 					// Parsing JSON objects
-					name = jsonObject.results[i].name;
-					email = jsonObject.results[i].email;
-					city = jsonObject.results[i].city;
-					state = jsonObject.results[i].state;
-					zip = jsonObject.results[i].zip;
-					phoneNumber = jsonObject.results[i].phoneNumber;
-					datecontactcreated = jsonObject.results[i].datecontactcreated;
-					infected = jsonObject.results[i].infected;
-					contactId = jsonObject.results[i].id;
-					console.log("Line 238: " + name);
+					name = jsonObject.results[i].name.toString();
+					email = jsonObject.results[i].email.toString();
+					city = jsonObject.results[i].city.toString();
+					state = jsonObject.results[i].state.toString();
+					zip = jsonObject.results[i].zip.toString();
+					phoneNumber = jsonObject.results[i].phoneNumber.toString();
+					datecontactcreated = jsonObject.results[i].datecontactcreated.toString();
+					infected = jsonObject.results[i].infected.toString();
+					contactId = jsonObject.results[i].id.toString();
 
 					var obj = jsonObject.results[i];
 					var strObj = JSON.stringify(obj);
