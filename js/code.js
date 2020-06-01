@@ -279,7 +279,7 @@ function searchContact()
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(' + obj.toString() + ')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + obj.toString() + ')">Edit</button>';
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
 					console.log("Line 265 " + cell8.innerHTML.toString());
 
