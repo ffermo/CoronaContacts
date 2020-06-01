@@ -358,7 +358,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="addContact()">Update Contact</button>';;
+	// document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="addContact()">Update Contact</button>';;
 
 	// API functions get called
 	var xhr = new XMLHttpRequest();
