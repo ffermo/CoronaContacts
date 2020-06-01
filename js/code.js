@@ -237,21 +237,21 @@ function searchContact()
 					contactId = jsonObject.results[i].id;
 
 					
-					var obj = 
-					{
-						name: name,
-						email: email,
-						city: city,
-						state: state,
-						zip: zip,
-						phoneNumber: phoneNumber,
-						date: datecontactcreated,
-						infect: infected,
-						id: contactId
+					// var obj = 
+					// {
+					// 	name: name,
+					// 	email: email,
+					// 	city: city,
+					// 	state: state,
+					// 	zip: zip,
+					// 	phoneNumber: phoneNumber,
+					// 	date: datecontactcreated,
+					// 	infect: infected,
+					// 	id: contactId
 
-					}
+					// }
 					// var parseObj = JSON.parse(obj);
-					 console.log(obj);
+					//  console.log(obj);
 					// console.log(`Parsed ${parseObj}`);
 
 					// Inserting from the bottom
