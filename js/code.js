@@ -323,8 +323,7 @@ function editContact()
 	// Creates the JSON token
 	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	
-	alert(jsonPayload);
-	alert("Edit Contacts Entered");
+	// alert(jsonPayload);
 	// Configures to Update Contact API
 	// var url = urlBase + '/UpdateContact.' + extension;
 
@@ -341,6 +340,7 @@ function editContact()
 
 	try
 	{
+		alert("Edit Contacts Entered");
 
 		// xhr.send(jsonPayload);
 
