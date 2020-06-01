@@ -298,54 +298,55 @@ function deleteContact( contactId )
 	}
 }
 
-function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
-// function editContact()
+// function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
+function editContact()
 {
-	alert("Edit function Entered");
-	if(name == null)
-		name = '';
-	else if(email == null)
-		email = '';
-	else if(city == null)
-		city = '';
-	else if(state == null)
-		state = '';
-	else if(zip == null)
-		zip = '';
-	else if(phoneNumber == null)
-		phoneNumber = '';
-	else if(infected == null)
-		infected = '';
-	else if(contactId == null)
-		contactId = '';
+	// alert("Edit function Entered");
+	// if(name == null)
+	// 	name = '';
+	// else if(email == null)
+	// 	email = '';
+	// else if(city == null)
+	// 	city = '';
+	// else if(state == null)
+	// 	state = '';
+	// else if(zip == null)
+	// 	zip = '';
+	// else if(phoneNumber == null)
+	// 	phoneNumber = '';
+	// else if(infected == null)
+	// 	infected = '';
+	// else if(contactId == null)
+		// contactId = '';
 
 
 	// Creates the JSON token
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
+	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	
 	alert(jsonPayload);
+	alert("Edit Contacts Entered");
 	// Configures to Update Contact API
-	var url = urlBase + '/UpdateContact.' + extension;
+	// var url = urlBase + '/UpdateContact.' + extension;
 
 	// Change the text on the Add Contacts to that of Edit Contact
-	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	// document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
+	// document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
 
 	// API functions get called
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// var xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, false);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
 	try
 	{
 
-		xhr.send(jsonPayload);
+		// xhr.send(jsonPayload);
 
-		alert("Contact Updated!");
+		// alert("Contact Updated!");
 		 
-	 	window.location.href = "dashboard.html";
+	 	// window.location.href = "dashboard.html";
 
 		
 	}
