@@ -8,14 +8,6 @@ var lastName = "";
 var email = "";
 var password ="";
 
-// var name ='';
-// var city = '';
-// var state = ''; 
-// var zip = '';
-// var phoneNumber ='';
-// var infected =''; 
-// var contactId ='';
-
 function displayName()                                                              
 {                                                                                   
 	    document.getElementById("userFirstName").innerHTML = ("Hello " + firstName + "!");
@@ -24,6 +16,7 @@ function displayName()
 function refreshList()
 {
 	document.getElementById("contactTable").innerHTML = "";
+	document.getElementById("contactTable").innerHTML = '<thead><tr><th>NAME</th><th>EMAIL</th><th>CITY</th><th>STATE</th><th>ZIP</th><th>PHONE NUMBER</th><th>INFECTED</th><th>CREATED</th></tr></thead>';
 }
 
 function doLogin()
@@ -237,24 +230,6 @@ function searchContact()
 					infected = jsonObject.results[i].infected.toString();
 					contactId = jsonObject.results[i].id.toString();
 
-					
-					// var obj = 
-					// {
-					// 	name: name,
-					// 	email: email,
-					// 	city: city,
-					// 	state: state,
-					// 	zip: zip,
-					// 	phoneNumber: phoneNumber,
-					// 	date: datecontactcreated,
-					// 	infect: infected,
-					// 	id: contactId
-
-					// }
-					// var parseObj = JSON.parse(obj);
-					//  console.log(obj);
-					// console.log(`Parsed ${parseObj}`);
-
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
 					
@@ -284,9 +259,6 @@ function searchContact()
 
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name + '\')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onClick="deleteContact(' + contactId + ')">Delete</button>';
-					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
-					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
-
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
@@ -294,9 +266,7 @@ function searchContact()
 				}
 			}
 			};
-
 		xhr.send(jsonPayload);
-
 	}
 	catch(err)
 	{
