@@ -334,11 +334,11 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 	document.getElementById("name").value = name;
     document.getElementById("email").value = email;
-    document.getElementById("city").value = city;
-	document.getElementById("state").value = state;
-	document.getElementById("zip").value = zip;
-    document.getElementById("phoneNumber").value = phoneNumber;
-    document.getElementById("infected").value = infected;
+    document.getElementById("city").value;
+	document.getElementById("state").value;
+	document.getElementById("zip").value;
+    document.getElementById("phoneNumber").value;
+    d = document.getElementById("infected").value;
 
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Update Contact</button>';
