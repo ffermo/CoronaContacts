@@ -251,7 +251,7 @@ function searchContact()
 
 					}
 					// var parseObj = JSON.parse(obj);
-					console.log(strObj);
+					// console.log(strObj);
 					// console.log(`Parsed ${parseObj}`);
 
 					// Inserting from the bottom
