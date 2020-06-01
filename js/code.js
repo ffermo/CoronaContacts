@@ -377,7 +377,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 		alert("Contact Updated!");
 		 
-	 	window.location.href = "dashboard.html";
+	 	// window.location.href = "dashboard.html";
 
 		
 	}
