@@ -347,13 +347,13 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 function enterContact(contactId)
 {
 	// Get ElementbyId on the forms from HTML after you send it in
-	name = document.getElementById("name").value;
-    email = document.getElementById("email").value;
-    city = document.getElementById("city").value;
-	state = document.getElementById("state").value;
-	zip = document.getElementById("zip").value;
-    phoneNumber = document.getElementById("phoneNumber").value;
-    infected = document.getElementById("infected").value;
+	var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var zip = document.getElementById("zip").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var infected = document.getElementById("infected").value;
 
 	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
@@ -371,7 +371,7 @@ function enterContact(contactId)
 	{
 
 		xhr.send(jsonPayload);
-		alert("Contact Updated!");
+		alert("Contact: " + name + " Updated!");
 		 
 	 	window.location.href = "dashboard.html";
 
