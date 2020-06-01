@@ -341,6 +341,13 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
     var xphoneNumber = document.getElementById("phoneNumber").value;
     var xinfected = document.getElementById("infected").value;
 
+	console.log(xname) ;
+    console.log(xemail) ;
+	console.log(xcity);
+	console.log(xstate);
+	console.log(xzip);
+	console.log(xphoneNumber);
+	console.log(xinfected);
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ xname + '\', \''  + xemail + '\', \'' + xcity + '\',\'' + xstate + '\',\'' + xzip + '\',\'' + xphoneNumber + '\',\'' + xinfected + '\',\'' + contactId + '\')">Update Contact</button>';
 
