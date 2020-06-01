@@ -364,13 +364,13 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
 	// Get ElementbyId on the forms from HTML after you send it in
-	name = document.getElementById("name");
-	email = document.getElementById("state");
-	city = document.getElementById("city");
-	state = document.getElementById("state");
-	zip = document.getElementById("zip");
-	phoneNumber = document.getElementById("phoneNumber");
-	infected = document.getElementById("infected");
+	name = document.getElementById("name").value;
+	email = document.getElementById("state").value;
+	city = document.getElementById("city").value;
+	state = document.getElementById("state").value;
+	zip = document.getElementById("zip").value;
+	phoneNumber = document.getElementById("phoneNumber").value;
+	infected = document.getElementById("infected").value;
 
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ name + '\', \''  + email + '\', \'' + city + '\',\'' + state + '\',\'' + zip + '\',\'' + phoneNumber + '\',\'' + infected + '\',\'' + contactId + '\')">Update Contact</button>';
