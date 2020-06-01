@@ -261,7 +261,7 @@ function searchContact()
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
 					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
-					cell9.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + contactId + ')">Edditing</button>';
+					cell9.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + name + ')">Edditing</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 
@@ -305,10 +305,10 @@ function deleteContact( contactId )
 }
 
 // function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
-function editContact( contactId )
+function editContact( name )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	alert("Edit function Entered: " + contactId);
+	alert("Edit function Entered: " + name);
 	// if(name == null)
 	// 	name = '';
 	// else if(email == null)
