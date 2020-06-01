@@ -228,7 +228,7 @@ function searchContact()
 					datecontactcreated = jsonObject.results[i].datecontactcreated;
 					infected = jsonObject.results[i].infected;
 					contactId = jsonObject.results[i].id;
-					
+
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
 					
@@ -263,8 +263,6 @@ function searchContact()
 						
 					}
 				}
-
-
 			}
 		};
 		xhr.send(jsonPayload);
@@ -322,13 +320,20 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 		contactId = '';
 
 
+	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	
 	alert(jsonPayload);
+	// Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
+
+	// Change the text on the Add Contacts to that of Edit Contact
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+
+	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
 
+	// API functions get called
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -338,7 +343,8 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 
 		xhr.send(jsonPayload);
 
-	 	alert("Contact Updated!");
+		alert("Contact Updated!");
+		 
 	 	window.location.href = "dashboard.html";
 
 		
