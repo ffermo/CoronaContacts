@@ -342,7 +342,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
     var xinfected = document.getElementById("infected").value;
 
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ xname + '\', \''  + xemail + '\', \'' + xcity + '\',\'' + xstate + '\',\'' + xzip + '\',\'' + xphoneNumber + '\',\'' + xinfected + '\',\'' + xcontactId + '\')">Update Contact</button>';
+	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ xname + '\', \''  + xemail + '\', \'' + xcity + '\',\'' + xstate + '\',\'' + xzip + '\',\'' + xphoneNumber + '\',\'' + xinfected + '\',\'' + contactId + '\')">Update Contact</button>';
 
 }
 
