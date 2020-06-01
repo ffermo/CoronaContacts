@@ -8,7 +8,7 @@
 	$city = $inData["city"];
 	$state = $inData["state"];
 	$zip = $inData["zip"];
-	$phone = $inData["phone"];
+	$phone = $inData["phoneNumber"];
 	$infected = $inData["infected"];
 	$userId = $inData["userId"];
 
