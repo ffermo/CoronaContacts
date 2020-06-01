@@ -334,10 +334,6 @@ function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 	// Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
 
-	
-
-	
-
 	// API functions get called
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
@@ -349,7 +345,7 @@ function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 		xhr.send(jsonPayload);
 		// Button Text Changes
 		// document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="refreshList()">Update Contact</button>';
-		// alert("Contact Updated!");
+		alert("Contact Updated!");
 		 
 	 	// window.location.href = "dashboard.html";
 
