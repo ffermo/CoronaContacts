@@ -236,8 +236,20 @@ function searchContact()
 					infected = jsonObject.results[i].infected.toString();
 					contactId = jsonObject.results[i].id.toString();
 
-					var obj = jsonObject.results[i];
-					var strObj = JSON.stringify(obj);
+					console.log(JSON.stringify(jsonObject.results[i]));
+					var obj = 
+					{
+						name: name,
+						email: email,
+						city: city,
+						state: state,
+						zip: zip,
+						phoneNumber: phoneNumber,
+						date: datecontactcreated,
+						infect: infected,
+						id: contactId
+
+					}
 					// var parseObj = JSON.parse(obj);
 					console.log(strObj);
 					// console.log(`Parsed ${parseObj}`);
@@ -267,7 +279,7 @@ function searchContact()
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
-					cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${name},${email},${city},${state},${zip},${phoneNumber},${infected},${contactId})">Edit</button>`;
+					cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${obj})">Edit</button>`;
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
 					console.log("Line 265 " + cell8.innerHTML.toString());
 
@@ -375,9 +387,11 @@ function deleteContact( contactId )
 // 	// }
 // }
 
-function editContact(name, email,city,state,zip,phoneNumber,infected,contactId)
+function editContact(contact)
 {
 	console.log("entered the function!");
+	console.log(contact.id);
+	console.log(contact.name);
 }
 function saveCookie()
 {
