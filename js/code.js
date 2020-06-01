@@ -332,29 +332,29 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	// Change the text on the Add Contacts to that of Edit Contact
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
-	// Get ElementbyId on the forms from HTML after you send it in
-	var xname = document.getElementById("name").value;
-    var xemail = document.getElementById("email").value;
-    var xcity = document.getElementById("city").value;
-	var xstate = document.getElementById("state").value;
-	var xzip = document.getElementById("zip").value;
-    var xphoneNumber = document.getElementById("phoneNumber").value;
-    var xinfected = document.getElementById("infected").value;
-
-	console.log(xname) ;
-    console.log(xemail) ;
-	console.log(xcity);
-	console.log(xstate);
-	console.log(xzip);
-	console.log(xphoneNumber);
-	console.log(xinfected);
+	
+	// console.log(name) ;
+    // console.log(email) ;
+	// console.log(city);
+	// console.log(state);
+	// console.log(zip);
+	// console.log(phoneNumber);
+	// console.log(infected);
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ xname + '\', \''  + xemail + '\', \'' + xcity + '\',\'' + xstate + '\',\'' + xzip + '\',\'' + xphoneNumber + '\',\'' + xinfected + '\',\'' + contactId + '\')">Update Contact</button>';
-
+	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact()">Update Contact</button>';
 }
 
-function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
+function enterContact()
 {
+	// Get ElementbyId on the forms from HTML after you send it in
+	name = document.getElementById("name").value;
+    email = document.getElementById("email").value;
+    city = document.getElementById("city").value;
+	state = document.getElementById("state").value;
+	zip = document.getElementById("zip").value;
+    phoneNumber = document.getElementById("phoneNumber").value;
+    infected = document.getElementById("infected").value;
+
 	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
 	
