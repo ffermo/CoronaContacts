@@ -350,22 +350,22 @@ function editContact(name, email, city, state, zip, phoneNumber, infected, conta
 	// xhr.open("POST", url, false);
 	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	try
-	{
-		alert("Edit Contacts Entered");
+	// try
+	// {
+	// 	alert("Edit Contacts Entered");
 
-		// xhr.send(jsonPayload);
+	// 	// xhr.send(jsonPayload);
 
-		// alert("Contact Updated!");
+	// 	// alert("Contact Updated!");
 		 
-	 	// window.location.href = "dashboard.html";
+	//  	// window.location.href = "dashboard.html";
 
 		
-	}
-	catch(err)
-	{	
-	 	alert("Error: " + err.message);
-	}
+	// }
+	// catch(err)
+	// {	
+	//  	alert("Error: " + err.message);
+	// }
 }
 
 function saveCookie()
