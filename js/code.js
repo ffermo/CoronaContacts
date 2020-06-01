@@ -378,7 +378,7 @@ function deleteContact( contactId )
 
 function editContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 {
-	alert("entered the function!");
+	console.log("entered the function!");
 }
 function saveCookie()
 {
