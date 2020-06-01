@@ -15,7 +15,7 @@
         <hr class="my-4">
         <span>Choose any of the options below to edit your contacts... Your Page is under construction.</span>
         <p class="lead">
-          <a class="btn btn-info" id="signOut" href="http://coronacontacts.club" role="button">Sign Out</a>
+          <a onclick="deleteCookie()" class="btn btn-info" id="signOut" href="http://coronacontacts.club" role="button">Sign Out</a>
         </p>
   </div>
   <div class="row">
@@ -129,6 +129,8 @@
       <p>
         <a class="btn btn-primary" onclick="addContact(); refreshList(); searchContact();">Add Contacts!</a>
         <span id="addUpdateButton"></span>
+        <span id="clearButton"></span>
+
       </p>
     </div>
   </div>
