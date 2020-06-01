@@ -331,7 +331,7 @@ function deleteContact( contactId )
 function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	alert("Edit function Entered: " + name );
+	// alert("Edit function Entered: " + name );
 
 	// if(name == null)
 	// 	name = '';
@@ -352,39 +352,39 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 
 	// Creates the JSON token
-	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	
-	// alert(jsonPayload);
-	// Configures to Update Contact API
-	// var url = urlBase + '/UpdateContact.' + extension;
+	alert(jsonPayload);
+	Configures to Update Contact API
+	var url = urlBase + '/UpdateContact.' + extension;
 
 	// Change the text on the Add Contacts to that of Edit Contact
-	// document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
 	// Button Text Changes
-	// document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
+	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
 
 	// API functions get called
-	// var xhr = new XMLHttpRequest();
-	// xhr.open("POST", url, false);
-	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", url, false);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	// try
-	// {
-	// 	alert("Edit Contacts Entered");
+	try
+	{
+		alert("Edit Contacts Entered");
 
-	// 	// xhr.send(jsonPayload);
+		xhr.send(jsonPayload);
 
-	// 	// alert("Contact Updated!");
+		alert("Contact Updated!");
 		 
-	//  	// window.location.href = "dashboard.html";
+	 	window.location.href = "dashboard.html";
 
 		
-	// }
-	// catch(err)
-	// {	
-	//  	alert("Error: " + err.message);
-	// }
+	}
+	catch(err)
+	{	
+	 	alert("Error: " + err.message);
+	}
 }
 
 // function editContact(contact)
