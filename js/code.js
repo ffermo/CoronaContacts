@@ -325,28 +325,8 @@ function deleteContact( contactId )
 	}
 }
 
-// function editContact(obj)
-function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
+function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 {
-
-	if(name == null)
-		name = '';
-	else if(email == null)
-		email = '';
-	else if(city == null)
-		city = '';
-	else if(state == null)
-		state = '';
-	else if(zip == null)
-		zip = '';
-	else if(phoneNumber == null)
-		phoneNumber = '';
-	else if(infected == null)
-		infected = '';
-	else if(contactId == null)
-		contactId = '';
-
-
 	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
 	
@@ -354,11 +334,9 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	// Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
 
-	// Change the text on the Add Contacts to that of Edit Contact
-	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	
 
-	// Button Text Changes
-	// document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="addContact()">Update Contact</button>';
+	
 
 	// API functions get called
 	var xhr = new XMLHttpRequest();
@@ -370,7 +348,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 		xhr.send(jsonPayload);
 		// Button Text Changes
-		document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="refreshList()">Update Contact</button>';
+		// document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="refreshList()">Update Contact</button>';
 		// alert("Contact Updated!");
 		 
 	 	// window.location.href = "dashboard.html";
@@ -381,6 +359,28 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	{	
 	 	alert("Error: " + err.message);
 	}
+}
+
+// function editContact(obj)
+function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
+{
+
+	// Change the text on the Add Contacts to that of Edit Contact
+	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+
+	// Get ElementbyId on the forms from HTML after you send it in
+	name = document.getElementById("name");
+	email = document.getElementById("state");
+	city = document.getElementById("city");
+	state = document.getElementById("state");
+	zip = document.getElementById("zip");
+	phoneNumber = document.getElementById("phoneNumber");
+	infected = document.getElementById("infected");
+
+	// Button Text Changes
+	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ name + '\', \''  + email + '\', \'' + city + '\',\'' + state + '\',\'' + zip + '\',\'' + phoneNumber + '\',\'' + infected + '\',\'' + contactId + '\')">Update Contact</button>';
+
+	
 }
 
 
