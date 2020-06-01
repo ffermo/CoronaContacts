@@ -325,6 +325,27 @@ function deleteContact( contactId )
 	}
 }
 
+function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
+{
+	alert("Change contact information for " + name + "on lower left hand box.");
+
+	// Change the text on the Add Contacts to that of Edit Contact
+	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+
+	// Get ElementbyId on the forms from HTML after you send it in
+	var xname = document.getElementById("name").value;
+    var xemail = document.getElementById("email").value;
+    var xcity = document.getElementById("city").value;
+	var xstate = document.getElementById("state").value;
+	var xzip = document.getElementById("zip").value;
+    var xphoneNumber = document.getElementById("phoneNumber").value;
+    var xinfected = document.getElementById("infected").value;
+
+	// Button Text Changes
+	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ xname + '\', \''  + xemail + '\', \'' + xcity + '\',\'' + xstate + '\',\'' + xzip + '\',\'' + xphoneNumber + '\',\'' + xinfected + '\',\'' + xcontactId + '\')">Update Contact</button>';
+
+}
+
 function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 {
 	// Creates the JSON token
@@ -355,27 +376,6 @@ function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 	}
 }
 
-// function editContact(obj)
-function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
-{
-	alert("Change contact information for " + name + "on lower left hand box.");
-
-	// Change the text on the Add Contacts to that of Edit Contact
-	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
-
-	// Get ElementbyId on the forms from HTML after you send it in
-	name = document.getElementById("name").value;
-	email = document.getElementById("state").value;
-	city = document.getElementById("city").value;
-	state = document.getElementById("state").value;
-	zip = document.getElementById("zip").value;
-	phoneNumber = document.getElementById("phoneNumber").value;
-	infected = document.getElementById("infected").value;
-
-	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ name + '\', \''  + email + '\', \'' + city + '\',\'' + state + '\',\'' + zip + '\',\'' + phoneNumber + '\',\'' + infected + '\',\'' + contactId + '\')">Update Contact</button>';
-
-}
 
 
 function saveCookie()
