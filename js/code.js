@@ -189,7 +189,7 @@ function searchContact()
 	// Json DB elements
 	var table = document.getElementById("contactTable");
 	var name = "";
-	var email = "";
+	var ContactEmail = "";
 	var city = "";
 	var state = "";
 	var zip = "";
@@ -261,7 +261,7 @@ function searchContact()
 					cell7.innerHTML = datecontactcreated;
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
-					cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + name + ')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 
 					if( i < jsonObject.results.length - 1 )
@@ -304,7 +304,7 @@ function deleteContact( contactId )
 }
 
 // function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
-function editContact(name)
+function editContact( contactId )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
 	alert("Edit function Entered: " + name);
