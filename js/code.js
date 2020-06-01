@@ -188,15 +188,6 @@ function searchContact()
 
 	// Json DB elements
 	var table = document.getElementById("contactTable");
-	var name = "";
-	var email = "";
-	var city = "";
-	var state = "";
-	var zip = "";
-	var phoneNumber = "";
-	var infected = "";
-	var datecontactcreated = "";
-	var contactId = "";
 	
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -226,15 +217,15 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
 					// Parsing JSON objects
-					name = jsonObject.results[i].name;
-					email = jsonObject.results[i].email;
-					city = jsonObject.results[i].city;
-					state = jsonObject.results[i].state;
-					zip = jsonObject.results[i].zip;
-					phoneNumber = jsonObject.results[i].phoneNumber;
-					datecontactcreated = jsonObject.results[i].datecontactcreated;
-					infected = jsonObject.results[i].infected;
-					contactId = jsonObject.results[i].id;
+					var name = jsonObject.results[i].name;
+					var email = jsonObject.results[i].email;
+					var city = jsonObject.results[i].city;
+					var state = jsonObject.results[i].state;
+					var zip = jsonObject.results[i].zip;
+					var phoneNumber = jsonObject.results[i].phoneNumber;
+					var datecontactcreated = jsonObject.results[i].datecontactcreated;
+					var infected = jsonObject.results[i].infected;
+					var contactId = jsonObject.results[i].id;
 
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
@@ -249,6 +240,7 @@ function searchContact()
 					var cell6 = row.insertCell(6);
 					var cell7 = row.insertCell(7);
 					var cell8 = row.insertCell(8);
+					var cell9 = row.insertCell(9);
 					
 					// Data Renders variables on HTML
 					cell0.innerHTML = name;
@@ -259,9 +251,9 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
+					cell9.innerHTML = '<button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
-					cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + name + ')">Edit</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 
 					if( i < jsonObject.results.length - 1 )
@@ -270,7 +262,7 @@ function searchContact()
 					}
 				}
 			}
-		};
+			};
 
 		xhr.send(jsonPayload);
 
