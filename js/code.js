@@ -354,7 +354,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
 	
-	alert(jsonPayload);
+	console.log(jsonPayload);
 	// Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
 
