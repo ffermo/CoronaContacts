@@ -306,11 +306,11 @@ function deleteContact( contactId )
 	}
 }
 
-// function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
-function editContact( contactId )
+function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
+// function editContact( contactId )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	alert("Edit function Entered: " + contactId );
+	alert("Edit function Entered: " + zip );
 
 	// if(name == null)
 	// 	name = '';
