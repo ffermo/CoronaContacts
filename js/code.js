@@ -226,32 +226,32 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
 					// Parsing JSON objects
-					name = jsonObject.results[i].name;
-					email = jsonObject.results[i].email;
-					city = jsonObject.results[i].city;
-					state = jsonObject.results[i].state;
-					zip = jsonObject.results[i].zip;
-					phoneNumber = jsonObject.results[i].phoneNumber;
-					datecontactcreated = jsonObject.results[i].datecontactcreated;
-					infected = jsonObject.results[i].infected;
-					contactId = jsonObject.results[i].id;
+					name = jsonObject.results[i].name.toString();
+					email = jsonObject.results[i].email.toString();
+					city = jsonObject.results[i].city.toString();
+					state = jsonObject.results[i].state.toString();
+					zip = jsonObject.results[i].zip.toString();
+					phoneNumber = jsonObject.results[i].phoneNumber.toString();
+					datecontactcreated = jsonObject.results[i].datecontactcreated.toString();
+					infected = jsonObject.results[i].infected.toString();
+					contactId = jsonObject.results[i].id.toString();
 
 					
-					// var obj = 
-					// {
-					// 	name: name,
-					// 	email: email,
-					// 	city: city,
-					// 	state: state,
-					// 	zip: zip,
-					// 	phoneNumber: phoneNumber,
-					// 	date: datecontactcreated,
-					// 	infect: infected,
-					// 	id: contactId
+					var obj = 
+					{
+						name: name,
+						email: email,
+						city: city,
+						state: state,
+						zip: zip,
+						phoneNumber: phoneNumber,
+						date: datecontactcreated,
+						infect: infected,
+						id: contactId
 
-					// }
+					}
 					// var parseObj = JSON.parse(obj);
-					//  console.log(obj);
+					 console.log(obj);
 					// console.log(`Parsed ${parseObj}`);
 
 					// Inserting from the bottom
@@ -278,13 +278,12 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					// '<input type="button" onClick="gotoNode(\'' + result.name + '\')" />'
-
 					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(\''+ name + ','  + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId + '\')">Edit</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + obj.toString() + ')">Edit</button>';
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
+					console.log("Line 265 " + cell8.innerHTML.toString());
 
-					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name + '\')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name + '\')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onClick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
@@ -329,10 +328,10 @@ function deleteContact( contactId )
 }
 
 // function editContact(obj)
-function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
+function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	alert("Edit function Entered: " + email );
+	// alert("Edit function Entered: " + name );
 
 	// if(name == null)
 	// 	name = '';
@@ -353,10 +352,10 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 
 
 	// Creates the JSON token
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + "," + '"userId" : "' + userId + '"}';
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
 	
 	alert(jsonPayload);
-	// Configures to Update Contact API
+	Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
 
 	// Change the text on the Add Contacts to that of Edit Contact
@@ -372,6 +371,7 @@ function editContact( name, email, city, state, zip, phoneNumber, infected, cont
 
 	try
 	{
+		alert("Edit Contacts Entered");
 
 		xhr.send(jsonPayload);
 
