@@ -260,7 +260,7 @@ function searchContact()
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name +')">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 
 					if( i < jsonObject.results.length - 1 )
