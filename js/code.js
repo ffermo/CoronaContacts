@@ -189,7 +189,7 @@ function searchContact()
 	// Json DB elements
 	var table = document.getElementById("contactTable");
 	var name = "";
-	var email = "";
+	var ContactEmail = "";
 	var city = "";
 	var state = "";
 	var zip = "";
@@ -226,15 +226,15 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
 					// Parsing JSON objects
-					name = jsonObject.results[i].name;
-					email = jsonObject.results[i].email;
-					city = jsonObject.results[i].city;
-					state = jsonObject.results[i].state;
-					zip = jsonObject.results[i].zip;
-					phoneNumber = jsonObject.results[i].phoneNumber;
-					datecontactcreated = jsonObject.results[i].datecontactcreated;
-					infected = jsonObject.results[i].infected;
-					contactId = jsonObject.results[i].id;
+					var name = jsonObject.results[i].name;
+					var email = jsonObject.results[i].email;
+					var city = jsonObject.results[i].city;
+					var state = jsonObject.results[i].state;
+					var zip = jsonObject.results[i].zip;
+					var phoneNumber = jsonObject.results[i].phoneNumber;
+					var datecontactcreated = jsonObject.results[i].datecontactcreated;
+					var infected = jsonObject.results[i].infected;
+					var contactId = jsonObject.results[i].id;
 					console.log("Line 238: " + name);
 
 					// Inserting from the bottom
@@ -261,7 +261,7 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ email +')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
@@ -305,11 +305,11 @@ function deleteContact( contactId )
 	}
 }
 
-// function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
-function editContact( name )
+function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
+// function editContact( name )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	alert("Edit function Entered: " + name);
+	alert("Edit function Entered");
 	// if(name == null)
 	// 	name = '';
 	// else if(email == null)
