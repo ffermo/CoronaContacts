@@ -358,7 +358,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="addContact()">Update Contact</button>';;
+	// document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="addContact()">Update Contact</button>';
 
 	// API functions get called
 	var xhr = new XMLHttpRequest();
@@ -369,7 +369,8 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	{
 
 		xhr.send(jsonPayload);
-
+		// Button Text Changes
+		document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="refreshList()">Update Contact</button>';
 		// alert("Contact Updated!");
 		 
 	 	// window.location.href = "dashboard.html";
