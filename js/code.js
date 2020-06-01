@@ -332,13 +332,6 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	// Change the text on the Add Contacts to that of Edit Contact
 	document.getElementById("update_contact").innerHTML = "Edit Contact for " + name;
 
-	// console.log(name) ;
-    // console.log(email) ;
-	// console.log(city);
-	// console.log(state);
-	// console.log(zip);
-	// console.log(phoneNumber);
-	// console.log(infected);
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Update Contact</button>';
 }
@@ -355,7 +348,7 @@ function enterContact(contactId)
     var infected = document.getElementById("infected").value;
 
 	// Creates the JSON token
-	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
+	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phone" : "' + phoneNumber + '", "infected" : "' + infected + '", "ID" : "' + contactId + '","userId" : "' + userId + '"}';
 	
 	console.log("New: " +jsonPayload);
 	// Configures to Update Contact API
@@ -368,7 +361,6 @@ function enterContact(contactId)
 
 	try
 	{
-
 		xhr.send(jsonPayload);
 		alert("Contact: " + name + " Updated!");
 		 
