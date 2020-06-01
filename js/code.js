@@ -226,15 +226,15 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
 					// Parsing JSON objects
-					name = jsonObject.results[i].name.toString();
-					email = jsonObject.results[i].email.toString();
-					city = jsonObject.results[i].city.toString();
-					state = jsonObject.results[i].state.toString();
-					zip = jsonObject.results[i].zip.toString();
-					phoneNumber = jsonObject.results[i].phoneNumber.toString();
-					datecontactcreated = jsonObject.results[i].datecontactcreated.toString();
-					infected = jsonObject.results[i].infected.toString();
-					contactId = jsonObject.results[i].id.toString();
+					name = jsonObject.results[i].name;
+					email = jsonObject.results[i].email;
+					city = jsonObject.results[i].city;
+					state = jsonObject.results[i].state;
+					zip = jsonObject.results[i].zip;
+					phoneNumber = jsonObject.results[i].phoneNumber;
+					datecontactcreated = jsonObject.results[i].datecontactcreated;
+					infected = jsonObject.results[i].infected;
+					contactId = jsonObject.results[i].id;
 
 					
 					var obj = 
@@ -281,7 +281,6 @@ function searchContact()
 					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(\''+ name + ','  + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId + '\')">Edit</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + obj.toString() + ')">Edit</button>';
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
-					console.log("Line 265 " + cell8.innerHTML.toString());
 
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name + '\')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onClick="deleteContact(' + contactId + ')">Delete</button>';
@@ -371,7 +370,6 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 	try
 	{
-		alert("Edit Contacts Entered");
 
 		xhr.send(jsonPayload);
 
