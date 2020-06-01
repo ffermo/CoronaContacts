@@ -343,11 +343,9 @@ function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 	{
 
 		xhr.send(jsonPayload);
-		// Button Text Changes
-		// document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="refreshList()">Update Contact</button>';
 		alert("Contact Updated!");
 		 
-	 	// window.location.href = "dashboard.html";
+	 	window.location.href = "dashboard.html";
 
 		
 	}
@@ -360,6 +358,7 @@ function enterContact(name, email,city,state,zip,phoneNumber,infected,contactId)
 // function editContact(obj)
 function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
 {
+	alert("Change contact information for " + name + "on lower left hand box.");
 
 	// Change the text on the Add Contacts to that of Edit Contact
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
@@ -376,7 +375,6 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact(\''+ name + '\', \''  + email + '\', \'' + city + '\',\'' + state + '\',\'' + zip + '\',\'' + phoneNumber + '\',\'' + infected + '\',\'' + contactId + '\')">Update Contact</button>';
 
-	
 }
 
 
