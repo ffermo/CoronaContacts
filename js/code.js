@@ -279,8 +279,6 @@ function searchContact()
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated; 
 					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(\''+ name + '\', \''  + email + '\', \'' + city + '\',\'' + state + '\',\'' + zip + '\',\'' + phoneNumber + '\',\'' + infected + '\',\'' + contactId + '\')">Edit</button>';
-					// cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + obj.toString() + ')">Edit</button>';
-					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
 					console.log("Line 265 " + cell8.innerHTML.toString());
 
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name + '\')">Edit</button>';
@@ -330,25 +328,23 @@ function deleteContact( contactId )
 // function editContact(obj)
 function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
 {
-	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	alert("Edit function Entered: " + name );
 
-	// if(name == null)
-	// 	name = '';
-	// else if(email == null)
-	// 	email = '';
-	// else if(city == null)
-	// 	city = '';
-	// else if(state == null)
-	// 	state = '';
-	// else if(zip == null)
-	// 	zip = '';
-	// else if(phoneNumber == null)
-	// 	phoneNumber = '';
-	// else if(infected == null)
-	// 	infected = '';
-	// else if(contactId == null)
-	// 	contactId = '';
+	if(name == null)
+		name = '';
+	else if(email == null)
+		email = '';
+	else if(city == null)
+		city = '';
+	else if(state == null)
+		state = '';
+	else if(zip == null)
+		zip = '';
+	else if(phoneNumber == null)
+		phoneNumber = '';
+	else if(infected == null)
+		infected = '';
+	else if(contactId == null)
+		contactId = '';
 
 
 	// Creates the JSON token
@@ -362,7 +358,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
+	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="addContact()">Update Contact</button>';;
 
 	// API functions get called
 	var xhr = new XMLHttpRequest();
@@ -371,7 +367,6 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 	try
 	{
-		alert("Edit Contacts Entered");
 
 		xhr.send(jsonPayload);
 
@@ -387,11 +382,6 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	}
 }
 
-// function editContact(contact)
-// {
-// 	console.log("entered the function!");
-// 	console.log(contact);
-// }
 
 function saveCookie()
 {
