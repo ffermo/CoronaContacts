@@ -370,7 +370,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 		xhr.send(jsonPayload);
 
-		alert("Contact Updated!");
+		// alert("Contact Updated!");
 		 
 	 	// window.location.href = "dashboard.html";
 
