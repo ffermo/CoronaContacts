@@ -110,7 +110,7 @@ function doRegister()
 
 		alert("Successfully Registered");
 
-		window.location.href = "dashboard.html";
+		window.location.href = "login.html";
 		
 	}
 	catch(err)
