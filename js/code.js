@@ -355,7 +355,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
 	
 	alert(jsonPayload);
-	Configures to Update Contact API
+	// Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
 
 	// Change the text on the Add Contacts to that of Edit Contact
