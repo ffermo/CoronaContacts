@@ -255,9 +255,7 @@ function searchContact()
 					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					//  cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact()">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 
-					// cell8.innerHTML = contactId;
-					
-					
+										
 					if( i < jsonObject.results.length - 1 )
 					{	
 						
@@ -265,6 +263,7 @@ function searchContact()
 				}
 			}
 		};
+		
 		xhr.send(jsonPayload);
 
 	}
@@ -289,8 +288,6 @@ function deleteContact( contactId )
 		xhr.send(jsonPayload);
 		alert("Contact Deleted!");
 		window.location.href = "dashboard.html";
-
-		
 	}
 	catch(err)
 	{	
