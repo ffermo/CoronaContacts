@@ -14,7 +14,7 @@ var password ="";
 // var zip = '';
 // var phoneNumber ='';
 // var infected =''; 
-// var contactId ='';
+var contactId ='';
 
 function displayName()                                                              
 {                                                                                   
