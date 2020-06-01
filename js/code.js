@@ -341,10 +341,10 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 	// console.log(phoneNumber);
 	// console.log(infected);
 	// Button Text Changes
-	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact()">Update Contact</button>';
+	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Update Contact</button>';
 }
 
-function enterContact()
+function enterContact(contactId)
 {
 	// Get ElementbyId on the forms from HTML after you send it in
 	name = document.getElementById("name").value;
