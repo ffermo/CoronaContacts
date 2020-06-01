@@ -301,23 +301,23 @@ function deleteContact( contactId )
 // function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
 function editContact()
 {
-	// alert("Edit function Entered");
-	// if(name == null)
-	// 	name = '';
-	// else if(email == null)
-	// 	email = '';
-	// else if(city == null)
-	// 	city = '';
-	// else if(state == null)
-	// 	state = '';
-	// else if(zip == null)
-	// 	zip = '';
-	// else if(phoneNumber == null)
-	// 	phoneNumber = '';
-	// else if(infected == null)
-	// 	infected = '';
-	// else if(contactId == null)
-		// contactId = '';
+	alert("Edit function Entered");
+	if(name == null)
+		name = '';
+	else if(email == null)
+		email = '';
+	else if(city == null)
+		city = '';
+	else if(state == null)
+		state = '';
+	else if(zip == null)
+		zip = '';
+	else if(phoneNumber == null)
+		phoneNumber = '';
+	else if(infected == null)
+		infected = '';
+	else if(contactId == null)
+		contactId = '';
 
 
 	// Creates the JSON token
