@@ -238,9 +238,9 @@ function searchContact()
 					console.log("Line 238: " + name);
 
 					var obj = jsonObject.results[i];
-					var parseObj = JSON.parse(obj);
+					// var parseObj = JSON.parse(obj);
 					console.log(JSON.stringify(obj));
-					console.log(`Parsed ${parseObj}`);
+					// console.log(`Parsed ${parseObj}`);
 
 					// Inserting from the bottom
 					var row = table.insertRow(-1);
@@ -268,7 +268,7 @@ function searchContact()
 					cell7.innerHTML = datecontactcreated;
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${name},${email},${city},${state},${zip},${phoneNumber},${infected},${contactId})">Edit</button>`;
-					cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${parseObj})">Edit</button>`;
+					cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${obj})">Edit</button>`;
 					console.log("Line 265 " + cell8.innerHTML.toString());
 
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ contactId +')">Edit</button>';
