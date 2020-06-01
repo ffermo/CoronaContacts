@@ -327,12 +327,11 @@ function deleteContact( contactId )
 
 function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
 {
-	alert("Change contact information for " + name + "on lower left hand box.");
+	alert("Change contact information for " + name + " on lower left hand box.");
 
 	// Change the text on the Add Contacts to that of Edit Contact
-	document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	document.getElementById("update_contact").innerHTML = "Edit Contact for " + name;
 
-	
 	// console.log(name) ;
     // console.log(email) ;
 	// console.log(city);
@@ -358,7 +357,7 @@ function enterContact(contactId)
 	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '","userId" : "' + userId + '"}';
 	
-	console.log(jsonPayload);
+	console.log("New: " +jsonPayload);
 	// Configures to Update Contact API
 	var url = urlBase + '/UpdateContact.' + extension;
 
