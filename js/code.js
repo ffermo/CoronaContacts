@@ -278,12 +278,12 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(\''+ name + ','  + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId + '\')">Edit</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + obj.toString() + ')">Edit</button>';
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
 					console.log("Line 265 " + cell8.innerHTML.toString());
 
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name +'\')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onClick="editContact(\''+ name + '\')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onClick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
@@ -328,70 +328,71 @@ function deleteContact( contactId )
 }
 
 // function editContact(obj)
-// function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
-// {
-// 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-// 	alert("Edit function Entered: " + contactId );
+function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
+{
+	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
+	alert("Edit function Entered: " + name );
 
-// 	// if(name == null)
-// 	// 	name = '';
-// 	// else if(email == null)
-// 	// 	email = '';
-// 	// else if(city == null)
-// 	// 	city = '';
-// 	// else if(state == null)
-// 	// 	state = '';
-// 	// else if(zip == null)
-// 	// 	zip = '';
-// 	// else if(phoneNumber == null)
-// 	// 	phoneNumber = '';
-// 	// else if(infected == null)
-// 	// 	infected = '';
-// 	// else if(contactId == null)
-// 	// 	contactId = '';
+	// if(name == null)
+	// 	name = '';
+	// else if(email == null)
+	// 	email = '';
+	// else if(city == null)
+	// 	city = '';
+	// else if(state == null)
+	// 	state = '';
+	// else if(zip == null)
+	// 	zip = '';
+	// else if(phoneNumber == null)
+	// 	phoneNumber = '';
+	// else if(infected == null)
+	// 	infected = '';
+	// else if(contactId == null)
+	// 	contactId = '';
 
 
-// 	// Creates the JSON token
-// 	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
+	// Creates the JSON token
+	// var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phoneNumber" : "' + phoneNumber + '", "infected" : "' + infected + '", "id" : "' + contactId + '"userId" : "' + userId + '"}';
 	
-// 	// alert(jsonPayload);
-// 	// Configures to Update Contact API
-// 	// var url = urlBase + '/UpdateContact.' + extension;
+	// alert(jsonPayload);
+	// Configures to Update Contact API
+	// var url = urlBase + '/UpdateContact.' + extension;
 
-// 	// Change the text on the Add Contacts to that of Edit Contact
-// 	// document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
+	// Change the text on the Add Contacts to that of Edit Contact
+	// document.getElementById("update_contact").innerHTML = "Edit Contact " + name;
 
-// 	// Button Text Changes
-// 	// document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
+	// Button Text Changes
+	// document.getElementById("addUpdateButton").innerHTML = "Update Contact!";
 
-// 	// API functions get called
-// 	// var xhr = new XMLHttpRequest();
-// 	// xhr.open("POST", url, false);
-// 	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	// API functions get called
+	// var xhr = new XMLHttpRequest();
+	// xhr.open("POST", url, false);
+	// xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-// 	// try
-// 	// {
-// 	// 	alert("Edit Contacts Entered");
+	// try
+	// {
+	// 	alert("Edit Contacts Entered");
 
-// 	// 	// xhr.send(jsonPayload);
+	// 	// xhr.send(jsonPayload);
 
-// 	// 	// alert("Contact Updated!");
+	// 	// alert("Contact Updated!");
 		 
-// 	//  	// window.location.href = "dashboard.html";
+	//  	// window.location.href = "dashboard.html";
 
 		
-// 	// }
-// 	// catch(err)
-// 	// {	
-// 	//  	alert("Error: " + err.message);
-// 	// }
+	// }
+	// catch(err)
+	// {	
+	//  	alert("Error: " + err.message);
+	// }
+}
+
+// function editContact(contact)
+// {
+// 	console.log("entered the function!");
+// 	console.log(contact);
 // }
 
-function editContact(contact)
-{
-	console.log("entered the function!");
-	console.log(contact);
-}
 function saveCookie()
 {
 	    var minutes = 20;
