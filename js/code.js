@@ -343,6 +343,9 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Update Contact</button>';
+	document.getElementById("clearButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Clear Input</button>';
+
+
 }
 
 function enterContact(contactId)
