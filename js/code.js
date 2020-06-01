@@ -261,7 +261,7 @@ function searchContact()
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
 					cell7.innerHTML = datecontactcreated;
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ contactId +')">Edit</button>';
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ email +')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
