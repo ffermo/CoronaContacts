@@ -189,7 +189,7 @@ function searchContact()
 	// Json DB elements
 	var table = document.getElementById("contactTable");
 	var name = "";
-	var ContactEmail = "";
+	var email = "";
 	var city = "";
 	var state = "";
 	var zip = "";
@@ -226,15 +226,15 @@ function searchContact()
 				for( var i=0; i<jsonObject.results.length; i++ )
 				{				
 					// Parsing JSON objects
-					var name = jsonObject.results[i].name;
-					var email = jsonObject.results[i].email;
-					var city = jsonObject.results[i].city;
-					var state = jsonObject.results[i].state;
-					var zip = jsonObject.results[i].zip;
-					var phoneNumber = jsonObject.results[i].phoneNumber;
-					var datecontactcreated = jsonObject.results[i].datecontactcreated;
-					var infected = jsonObject.results[i].infected;
-					var contactId = jsonObject.results[i].id;
+					name = jsonObject.results[i].name;
+					email = jsonObject.results[i].email;
+					city = jsonObject.results[i].city;
+					state = jsonObject.results[i].state;
+					zip = jsonObject.results[i].zip;
+					phoneNumber = jsonObject.results[i].phoneNumber;
+					datecontactcreated = jsonObject.results[i].datecontactcreated;
+					infected = jsonObject.results[i].infected;
+					contactId = jsonObject.results[i].id;
 					console.log("Line 238: " + name);
 
 					// Inserting from the bottom
