@@ -72,6 +72,7 @@ function doLogin()
 	}
 }
 
+
 function doRegister()
 {
 	userId = 0;
@@ -382,8 +383,6 @@ function enterContact(contactId)
 	}
 }
 
-
-
 function saveCookie()
 {
 	    var minutes = 20;
@@ -417,9 +416,17 @@ function readCookie()
 	
 	if( userId < 0 )
 	{
-		window.location.href = "dashboard.html";
+		window.location.href = "login.html";
 	}
 	else
 	{
 	}
+}
+
+function deleteCookie()
+{
+	userId = -1;
+	var date = new Date();
+	date.setTime(date.getTime()-1000);
+	document.cookie = "firstName=" + firstName + ",lastName=" + lastName + ",userId=" + userId + ";expires=" + date.toGMTString();
 }
