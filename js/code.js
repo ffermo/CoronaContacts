@@ -331,7 +331,7 @@ function deleteContact( contactId )
 function editContact( name, email,city,state,zip,phoneNumber,infected,contactId )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
-	// alert("Edit function Entered: " + name );
+	alert("Edit function Entered: " + email );
 
 	// if(name == null)
 	// 	name = '';
