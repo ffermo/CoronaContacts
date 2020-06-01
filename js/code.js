@@ -237,21 +237,21 @@ function searchContact()
 					contactId = jsonObject.results[i].id.toString();
 
 					
-					var obj = 
-					{
-						name: name,
-						email: email,
-						city: city,
-						state: state,
-						zip: zip,
-						phoneNumber: phoneNumber,
-						date: datecontactcreated,
-						infect: infected,
-						id: contactId
+					// var obj = 
+					// {
+					// 	name: name,
+					// 	email: email,
+					// 	city: city,
+					// 	state: state,
+					// 	zip: zip,
+					// 	phoneNumber: phoneNumber,
+					// 	date: datecontactcreated,
+					// 	infect: infected,
+					// 	id: contactId
 
-					}
+					// }
 					// var parseObj = JSON.parse(obj);
-					 console.log(obj);
+					//  console.log(obj);
 					// console.log(`Parsed ${parseObj}`);
 
 					// Inserting from the bottom
@@ -277,8 +277,8 @@ function searchContact()
 					cell4.innerHTML = zip;
 					cell5.innerHTML = phoneNumber;
 					cell6.innerHTML = infected;
-					cell7.innerHTML = datecontactcreated;
-					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(\'s'+ name + ','  + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId + '\'s)">Edit</button>';
+					cell7.innerHTML = datecontactcreated; 
+					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact(\''+ name + ','  + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId + '\'s)">Edit</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + obj.toString() + ')">Edit</button>';
 					// cell8.innerHTML = `<button type="button" class="btn btn-primary" onclick="editContact(${JSON.parse(strObj)})">Edit</button>`;
 					console.log("Line 265 " + cell8.innerHTML.toString());
