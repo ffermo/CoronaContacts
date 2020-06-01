@@ -8,6 +8,14 @@ var lastName = "";
 var email = "";
 var password ="";
 
+var name ='';
+var city = '';
+var state = ''; 
+var zip = '';
+var phoneNumber ='';
+var infected =''; 
+var contactId ='';
+
 function displayName()                                                              
 {                                                                                   
 	    document.getElementById("userFirstName").innerHTML = "Hello " + firstName + "!";
@@ -17,7 +25,6 @@ function refreshList()
 {
 	document.getElementById("contactTable").innerHTML = "";
 }
-
 
 function doLogin()
 {
@@ -295,7 +302,7 @@ function deleteContact( contactId )
 	}
 }
 
-function editContact( name, email, city, state, zip, phoneNumber, infected, contactId )
+function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
 // function editContact()
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
