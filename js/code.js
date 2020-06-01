@@ -188,6 +188,18 @@ function searchContact()
 
 	// Json DB elements
 	var table = document.getElementById("contactTable");
+<<<<<<< HEAD
+=======
+	var name = "";
+	var ContactEmail = "";
+	var city = "";
+	var state = "";
+	var zip = "";
+	var phoneNumber = "";
+	var infected = "";
+	var datecontactcreated = "";
+	var contactId = "";
+>>>>>>> 2bf8bdfcaf0aefa622489fce07838bb3fc2b5558
 	
 	// Converts to JSON package + sends to the API
 	var jsonPayload = '{"search" : "' + srch + '","userId" : ' + userId + '}';
@@ -254,6 +266,10 @@ function searchContact()
 					cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact('+ name + ',' + email + ',' + city + ',' + state + ',' + zip + ',' + phoneNumber + ',' + infected + ',' + contactId +')">Edit</button>';
 					cell9.innerHTML = '<button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name )">Edit</button><button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
+<<<<<<< HEAD
+=======
+					cell8.innerHTML = '<button type="button" class="btn btn-dark" onclick="editContact(' + contactId + ')">Delete</button>';
+>>>>>>> 2bf8bdfcaf0aefa622489fce07838bb3fc2b5558
 					// cell8.innerHTML = '<button type="button" class="btn btn-primary" onclick="editContact( name , email , city , state, zip , phoneNumber , infected , contactId )">Edit</button> <button type="button" class="btn btn-dark" onclick="deleteContact(' + contactId + ')">Delete</button>';
 
 					if( i < jsonObject.results.length - 1 )
@@ -296,7 +312,7 @@ function deleteContact( contactId )
 }
 
 // function editContact(name, email, city, state, zip, phoneNumber, infected, contactId )
-function editContact(name)
+function editContact( contactId )
 {
 	// console.log(name + '\n' + email + '\n' + city + '\n' + state + '\n' + zip + '\n' + phoneNumber + '\n' + infected + '\n' + contactId);
 	alert("Edit function Entered: " + name);
