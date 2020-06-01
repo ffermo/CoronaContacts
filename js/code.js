@@ -18,7 +18,7 @@ var contactId ='';
 
 function displayName()                                                              
 {                                                                                   
-	    document.getElementById("userFirstName").innerHTML = "Hello " + firstName + "!";
+	    document.getElementById("userFirstName").innerHTML = ("Hello " + firstName + "!");
 }                                                                                   
 
 function refreshList()
