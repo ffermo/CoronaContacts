@@ -285,10 +285,14 @@ function deleteContact( contactId )
 
 	try
 	{
+		var deleteChoice = confirm("Are you sure?")
+
+		if (!deleteChoice)
+			return;
+
 		xhr.send(jsonPayload);
 		// alert("Contact Deleted!");
 		document.getElementById("errorMessage").innerHTML = "";
-		document.getElementById("finishMessage").innerHTML = "Contact deleted!";
 		// window.location.href = "dashboard.html";
 
 		refreshList();
@@ -373,6 +377,7 @@ function enterContact(contactId)
 	{
 		xhr.send(jsonPayload);
 
+		
 		document.getElementById("errorMessage").innerHTML = "";
 		document.getElementById("finishMessage").innerHTML = name + " updated!";
 		 
