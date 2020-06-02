@@ -1,5 +1,3 @@
-#borderimg {
-  border: 10px solid transparent;
-  padding: 15px;
-  border-image: url(border.png) 30 round;
+body{
+	background-color: rgb(128,38,61);
 }
