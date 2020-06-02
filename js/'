@@ -208,9 +208,9 @@ function searchContact()
 				var jsonObject = JSON.parse( xhr.responseText );
 
 				// Text displays to inform client the search results are displayed. 
-				if (jsonObject.id == -1)
-					document.getElementById("searchResults").innerHTML = "No contacts found!";
-				else if (jsonObject.results.length == 1)
+				if (jsonObject.results[0].id == -1)
+				 	document.getElementById("searchResults").innerHTML = "No contacts found!";
+				if (jsonObject.results.length == 1)
 					document.getElementById("searchResults").innerHTML = "1 contact found!";
 				else if (jsonObject.results.length > 1)
 					document.getElementById("searchResults").innerHTML = jsonObject.results.length + " Contacts found!";
