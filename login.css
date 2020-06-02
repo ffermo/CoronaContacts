@@ -1,3 +1,6 @@
 body{
-	background-color: rgb(128,38,61);
+	/*background-color: rgb(128,38,61);*/
+	#grad{
+		background-image: linear-gradient(to bottom right, red, yellow);
+	}
 }
