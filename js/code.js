@@ -80,7 +80,29 @@ function doRegister()
     var password = document.getElementById("password").value;
 	//var hash = md5(password);
 
-	document.getElementById("regResult").innerHTML = "";
+	if (firstName == "")
+	{
+		document.getElementById("regError").innerHTML = "Please enter your first name.";
+		return;
+	}
+
+	else if (lastName == "")
+	{
+		document.getElementById("regError").innerHTML = "Please enter a last name.";
+		return;
+	}
+
+	else if (email == "")
+	{
+		document.getElementById("regError").innerHTML = "Please enter an e-mail.";
+		return;
+	}
+
+	else if (password == "")
+	{
+		document.getElementById("regError").innerHTML = "Please enter a password.";
+		return;
+	}
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
 	var jsonPayload = '{"first" : "' + firstName + '", "last" : "' + lastName + '", "email" : "'+ email + '", "password" : "' + password + '"}';
@@ -98,19 +120,14 @@ function doRegister()
 
 		if( userId < 1  )
 		{
-			        document.getElementById("regResult").innerHTML = "E-mail already exists!";
+			        document.getElementById("regError").innerHTML = "E-mail already exists!";
 			        return;
 		}
 
-		document.getElementById("regResult").innerHTML = "In Database";
-		firstName = jsonObject.firstName;
-		lastName = jsonObject.lastName;
+		// alert("Successfully Registered");
+		document.getElementById("regSuccess").innerHTML = "Registered! Redirecting to login page in 3 seconds.";
 
-		saveCookie();
-
-		alert("Successfully Registered");
-
-		window.location.href = "dashboard.html";
+		setTimeout(function(){ window.location.href= 'login.html'; }, 3000);
 		
 	}
 	catch(err)
