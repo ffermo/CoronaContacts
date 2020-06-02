@@ -1,5 +1,5 @@
 // Global variables.
-var urlBase = 'coronacontacts.club/APICode';
+var urlBase = 'http://coronacontacts.club/APICode';
 var extension = 'php';
 
 var userId = 0;
