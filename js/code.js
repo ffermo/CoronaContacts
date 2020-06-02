@@ -313,7 +313,7 @@ function editContact( name, email,city,state,zip,phoneNumber,infected,contactId 
 
 	// Button Text Changes
 	document.getElementById("addUpdateButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Update Contact</button>';
-	document.getElementById("clearButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="enterContact('+ contactId+')">Clear Input</button>';
+	document.getElementById("clearButton").innerHTML = '<button type="button" class="btn btn-dark" onClick="clearEditFields()">Clear Input</button>';
 }
 
 function clearEditFields()
@@ -337,6 +337,13 @@ function enterContact(contactId)
 	var zip = document.getElementById("zip").value;
     var phoneNumber = document.getElementById("phoneNumber").value;
     var infected = document.getElementById("infected").value;
+
+	if (name == "")
+	{
+		document.getElementById("errorMessage").innerHTML = "Name required!";
+		return;
+	}
+
 
 	// Creates the JSON token
 	var jsonPayload = '{"name" : "' + name + '", "email" : "' + email + '", "city" : "' + city + '", "state" : "' + state + '", "zip" : "' + zip + '", "phone" : "' + phoneNumber + '", "infected" : "' + infected + '", "ID" : "' + contactId + '","userId" : "' + userId + '"}';
