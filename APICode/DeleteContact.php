@@ -26,7 +26,7 @@
 		
 		$conn->close();
 	}
-	// Confirms that the API works.
+	// Confirms that the API works and contact is deleted.
 	returnWithError("CONTACT DELETED!");
 	
 	function getRequestInfo()
