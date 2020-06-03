@@ -1,8 +1,8 @@
 <?php
-	// requesting users input
+	// Requesting users input.
 	$inData = getRequestInfo();
 	
-	// defining all the required fields for the contacts
+	// Defining all the required fields for the contacts.
 	$name = $inData["name"];
 	$email = $inData["email"];
 	$city = $inData["city"];
@@ -12,20 +12,20 @@
 	$infected = $inData["infected"];
 	$userId = $inData["userId"];
 
-	// connecting to the localhost
+	// Connecting to the localhost.
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
-	// checking if the connection was successful or not
+	// Checking if the connection was successful or not.
 	if ($conn->connect_error) 
 	{
-		// if the connection was not successfull return an error 
+		// If the connection was not successful, return an error.
 		returnWithError( $conn->connect_error );
 	} 
 
-	// if the connection was successful 
+	// If the connection was successful.
 	else
 	{
-		// using sql to store the data fields into the database.
+		// Using sql to store the data fields into the database.
 		$sql = "INSERT INTO Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
 
 		if( $result = $conn->query($sql) != TRUE )
@@ -54,7 +54,7 @@
 
 		}
 		
-		// closing the connection with the localhost
+		// Closing the connection with the localhost.
 		$conn->close();
 	}
 	
@@ -65,7 +65,7 @@
 	{
 		return json_decode(file_get_contents('php://input'), true);
 	}
-	// function for ???
+	// function for sending result to the frontend
 	function sendResultInfoAsJson( $obj )
 	{
 		header('Content-type: application/json');
