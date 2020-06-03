@@ -7,16 +7,16 @@
 	$email = $inData["email"];
 	$password = $inData["password"];
 
-	// connecting to the server
+	// Connecting to the server
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
-	// checking if the connection was successful
+	// Checking if the connection was successful
 	if ($conn->connect_error) 
 	{
 		returnWithError( $conn->connect_error );
 	}
 
-	// collecting password and emails for login if the connection was successful
+	// Collecting password and emails for login if the connection was successful
 	else
 	{
 		$sql = "SELECT * FROM Users WHERE Password='$password' AND Email='$email'";
@@ -45,7 +45,7 @@
 		$conn->close();
 	}
 
-	// function that requests data from the user (JSON)
+	// Function that requests data from the user (JSON)
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
@@ -63,7 +63,7 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	// function return the required info as needed.
+	// Function return the required info as needed.
 	function returnWithInfo( $firstName, $lastName, $id )
 	{
 		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
