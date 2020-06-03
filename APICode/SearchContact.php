@@ -5,19 +5,10 @@
 	$searchResults = "";
 	$searchCount = 0;
 
-	// Contacts: name, email, city, state, zip, phone
-
 	// Parse and store individuals fields from JSON field into variables.
-	// $name = $inData["name"];
-	// $email = $inData["email"];
-	// $city = $inData["city"];
-	// $state = $inData["state"];
-	// $zip = $inData["zip"];
-	// $phone = $inData["phone"];
-	// $infected = $inData["infected"];
-	
 	$userId = $inData["userId"];
 
+	// Establish connection to the database.
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 
 	if ($conn->connect_error) 
@@ -55,7 +46,8 @@
 				$date = new DateTime($row["DateContactCreated"] ." UTC");
 				$date->setTimezone(new DateTimeZone('America/New_York'));
 				$formattedDate = date_format($date, 'm/d/Y');
-
+				
+				// Get the search results.
 				$searchResults .= '{
 				"id":"' . $row["ID"] . '",
 				"datecontactcreated":"' . $formattedDate . '",
