@@ -12,6 +12,7 @@
 	$ID = $inData["ID"];
 	$userId = $inData["userId"];
 
+	// Establish a connection to the backend.
 	$conn = new mysqli("localhost", "faizar", "", "coronacontacts");
 	
 	if ($conn->connect_error) 
@@ -21,8 +22,7 @@
 	
 	else 
 	{
-		// To update info already in a table.: UPDATE [table name] SET Select_priv = 'Y',Insert_priv = 'Y',Update_priv = 'Y' where [field name] = 'user';
-
+		// To update info already in the table in the database.
 		$sql = "UPDATE Contacts SET 
 		Name = '$name', 
 		Email = '$email', 
@@ -34,8 +34,6 @@
 
 		WHERE ID = '$ID'";
 
-		// $sql = "insert into Contacts (Name, Email, City, State, Zip, Phone, Infected, UserId) VALUES ('$name','$email','$city','$state','$zip','$phone', '$infected', '$userId')";
-		
 		if( $result = $conn->query($sql) != TRUE )
 		{
 			returnWithError( $conn->error );
@@ -44,6 +42,7 @@
 		$conn->close();
 	}
 	
+	// If it reaches here, contact is updated in the database.
 	returnWithError("CONTACT UPDATED!");
 	
 	function getRequestInfo()
