@@ -1,5 +1,8 @@
-
 .jumbotron{
-	/* background-color: rgb(207,104,100); */
-	background-color: rgb(128,38,61);
+	background-color: rgb(0, 59, 66);
+	float: right;
+}
+
+#userFirstName {
+	color: rgb(255, 109, 79);
 }
