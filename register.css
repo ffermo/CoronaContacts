@@ -1,3 +1,10 @@
-body{
-	background-color: rgb(128,38,61);
+body {
+	background-image: url(https://duux.com/wp-content/uploads/2020/03/AdobeStock_322777229-scaled.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: rgb(0, 59, 66);
+}
+
+.card {
+	box-shadow: 0 50px 50px rgba(0,0,0,0.19),0 50px 50px rgba(0,0,0,0.23);
 }
