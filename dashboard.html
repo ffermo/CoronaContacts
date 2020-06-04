@@ -12,15 +12,14 @@
 
 <body onload="readCookie(); displayName(); searchContact();">
   <div class="jumbotron">
-	<h1 id="userFirstName" style = "color:orange; font-family:candara; text-shadow: 0 0 3px #FF0000;" class="display-4">Hello!</h1>
-        <span class="lead" style = "color:white; font-family:candara; text-shadow: 2px 2px 4px #000000;">Here at CoronaContacts, we aim to help you keep track of who to avoid during the pandemic.</span>
+	<h1 id="userFirstName" style = "font-family:candara;" class="display-4">Hello!</h1>
+        <span class="lead" style = "color:white; font-family:candara; text-shadow: 2px 2px 4px #000000;">Welcome back to CoronaContacts, the place for keeping track of who is infected!</span>
         <hr class="my-4">
         <span style = "color:white; font-family:candara; text-shadow: 2px 2px 4px #000000;">Welcome to the dashboard - here you can ADD, DELETE, SEARCH and UPDATE your contact list.</span>
         <p class="lead">
           <a onclick="deleteCookie()" class="btn btn-info" id="signOut" href="http://coronacontacts.club" role="button">Sign Out</a>
         </p>
-  </div>
-  <div class="row">
+
   <div class="card col-sm-3" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Search Contacts</h5>
@@ -38,7 +37,9 @@
       </p>
       <a class="btn btn-primary justify-content-center" onClick="refreshList(); searchContact();">Search</a>
     </div>
+  </div>      
   </div>
+  <div class="row">
 
 
   <div class="row justify-content-center col-sm-9">
@@ -139,8 +140,4 @@
   </div>
 </div>
 </body>
-
-
-
 </html>
-
