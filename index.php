@@ -27,10 +27,3 @@ body {
 }
 </style>
 </head>
-
-<body>
-<div class="container1">Corona Contacts Summer 2020</div>
-<div class="container2"><img src="https://media3.giphy.com/media/KziKCpvrGngHbYjaUF/giphy.gif?cid=ecf05e4705830889511b4c5ecb73a042bfb17b4a995e8cd6&rid=giphy.gif"
-alt="Baby Yoda">
-</div>
-</body>
