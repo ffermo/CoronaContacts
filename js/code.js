@@ -1,71 +1,76 @@
 // Global variables.
 var urlBase = 'http://coronacontacts.club/APICode';
 var extension = 'php';
-
 var userId = 0;
 var firstName = "";
 var lastName = "";
 var email = "";
 var password ="";
 
+// Function to display name once user logs in.
 function displayName()                                                              
 {                                                                                   
 	    document.getElementById("userFirstName").innerHTML = ("Hello " + firstName + "!");
 }                                                                                   
 
+// Function call to refresh contact list on CRUD function completion.
 function refreshList()
 {
 	document.getElementById("contactTable").innerHTML = "";
 	document.getElementById("contactTable").innerHTML = '<thead><tr><th>NAME</th><th>EMAIL</th><th>CITY</th><th>STATE</th><th>ZIP</th><th>PHONE NUMBER</th><th>INFECTED</th><th>CREATED</th></tr></thead>';
 }
 
+// Login function.
 function doLogin()
 {
 	userId = 0;
 	firstName = "";
 	lastName = "";
 
+	// Store email and hashed password to send as JSON.
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-	//var hash = md5(password);
+	var hash = md5(password);
 
 	document.getElementById("loginResult").innerHTML = "";
 
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"email" : "' + email + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"email" : "' + email + '", "password" : "' + hash + '"}'; // JSON payload.
 	var url = urlBase + '/Login.' + extension;
 
+	// Creates connection to API.
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	try
+	try // If connection to database fails, go to catch()
 	{
 		xhr.send(jsonPayload);
-		var jsonObject = JSON.parse( xhr.responseText  );
+		var jsonObject = JSON.parse( xhr.responseText  ); // Takes response JSON payload from API.
 		userId = jsonObject.id;
 
-		if( userId < 1  )
+		if( userId < 1  ) // If userId < 1, that means user was not found in database with user/password combination.
 		{
 			document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 			return;
 		}
 
+		// Stores first and last name as global variable.
 		firstName = jsonObject.firstName;
 		lastName = jsonObject.lastName;
 
-		saveCookie();
+		saveCookie(); // Call function to save cookie.
 
-		window.location.href = "dashboard.html";
-		
+		window.location.href = "dashboard.html"; // Redirect user to dashboard once login is successful.
+
 	}
-	catch(err)
+	catch(err) // If connection fails, print error message from try statement.
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
 }
 
-
+// Register function from register.html
 function doRegister()
 {
 	userId = 0;
@@ -74,12 +79,13 @@ function doRegister()
 	email = "";
 	password = "";
 
+	// Takes elements from fields in HTML and stores them into local variables.
 	var firstName = document.getElementById("firstName").value;
     var lastName = document.getElementById("lastName").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-	//var hash = md5(password);
 
+	// If statement to check if any of the fields are empty.
 	if (firstName == "")
 	{
 		document.getElementById("regError").innerHTML = "Please enter your first name.";
@@ -104,33 +110,37 @@ function doRegister()
 		return;
 	}
 
+	// Hashing of the password.
+	var hash = md5(password);
 	//var jsonPayload = '{"login" : "' + login + '", "password" : "' + hash + '"}';
-	var jsonPayload = '{"first" : "' + firstName + '", "last" : "' + lastName + '", "email" : "'+ email + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"first" : "' + firstName + '", "last" : "' + lastName + '", "email" : "'+ email + '", "password" : "' + hash + '"}';
 	var url = urlBase + '/Register.' + extension;
 
+	// Connection request to register API.
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, false);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 
-	try
+	try // If connection to database fails, go to catch()
 	{
 		xhr.send(jsonPayload);
 		var jsonObject = JSON.parse( xhr.responseText );
 		userId = jsonObject.id;
 
-		if( userId < 1  )
+		if( userId < 1  ) // If userId < 1, this means e-mail already exists in database.
 		{
 			        document.getElementById("regError").innerHTML = "E-mail already exists!";
 			        return;
 		}
 
-		// alert("Successfully Registered");
+		// If register is successful, completion message gets printed and user is redirected back to login page in 3 seconds.
 		document.getElementById("regSuccess").innerHTML = "Registered! Redirecting to login page in 3 seconds.";
 
 		setTimeout(function(){ window.location.href= 'login.html'; }, 3000);
 		
 	}
-	catch(err)
+
+	catch(err) // Catch block will never be reached because our code is perfect.
 	{
 	}
 }
@@ -179,7 +189,9 @@ function addContact()
 	xhr.send(jsonPayload);
 	var jsonObject = JSON.parse( xhr.responseText );
 
+	document.getElementById("errorMessage").innerHTML = "";
 	document.getElementById("finishMessage").innerHTML = "Added!";
+
 	refreshList();
 	searchContact();
 	// window.location.href = "dashboard.html";
